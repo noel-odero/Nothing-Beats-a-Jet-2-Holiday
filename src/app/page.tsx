@@ -1,102 +1,270 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="font-sans">
+      {/* Hero */}
+      <section className="section bg-background">
+        <div className="container-responsive grid gap-8 md:grid-cols-2 items-center">
+          <div className="flex flex-col gap-4">
+            <span className="chip w-fit bg-[--color-accent] text-[--color-accent-foreground]">
+              Next.js + Tailwind PWA
+            </span>
+            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
+              Make TVET attractive, transparent, and connected to industry
+            </h1>
+            <p className="text-[17px] text-muted-foreground max-w-prose">
+              A mobile-first platform linking TVET learners, prospective
+              students, and private sector institutions in one ecosystem—closing
+              Rwanda’s skills gap with stories, credentials, and real
+              opportunities.
+            </p>
+            <div className="flex items-center gap-3">
+              <a href="#get-started" className="btn-primary h-11 px-5">
+                Get started
+              </a>
+              <a href="#learn-more" className="btn-outline h-11 px-5">
+                Learn more
+              </a>
+            </div>
+            <div className="mt-4 flex items-center gap-6 text-sm text-muted-foreground">
+              <div className="flex items-center gap-2">
+                <span className="size-2 rounded-full bg-[--color-brand]"></span>{' '}
+                PWA, offline-ready
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="size-2 rounded-full bg-[--color-brand]"></span>{' '}
+                Modular & scalable
+              </div>
+            </div>
+          </div>
+          <div className="relative h-[260px] md:h-[380px] rounded-[--radius-lg] overflow-hidden shadow-[--shadow-lg]">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/window.svg"
+              alt="Platform preview"
+              fill
+              className="object-contain p-10 opacity-90"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* Audience value props */}
+      <section id="learn-more" className="section bg-[--color-surface]">
+        <div className="container-responsive grid gap-6">
+          <h2 className="text-3xl">
+            One platform. Three audiences. Shared outcomes.
+          </h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="card">
+              <h3 className="text-xl">Prospective learners</h3>
+              <p className="mt-2 text-muted-foreground">
+                Discover success stories, career roadmaps, expected salaries,
+                and accredited institutions.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>• Guided exploration flows</li>
+                <li>• Salary transparency</li>
+                <li>• Institution finder</li>
+              </ul>
+            </div>
+            <div className="card">
+              <h3 className="text-xl">TVET students</h3>
+              <p className="mt-2 text-muted-foreground">
+                Gamified learning, digital badges, auto-CVs, job matching, and
+                leaderboards.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>• XP and streaks</li>
+                <li>• Verified badges</li>
+                <li>• Jobs and internships</li>
+              </ul>
+            </div>
+            <div className="card">
+              <h3 className="text-xl">Employers</h3>
+              <p className="mt-2 text-muted-foreground">
+                Track students, issue credentials, and hire from a verified
+                talent pool.
+              </p>
+              <ul className="mt-4 space-y-2 text-sm">
+                <li>• Dashboard & reports</li>
+                <li>• Digital credentialing</li>
+                <li>• Direct outreach</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success stories */}
+      <section className="section bg-background">
+        <div className="container-responsive grid gap-6">
+          <h2 className="text-3xl">Real stories, real outcomes</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="card flex flex-col gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-full bg-[--color-surface] border border-[--color-border]" />
+                  <div>
+                    <p className="font-medium">Alice U.</p>
+                    <p className="text-xs text-muted-foreground">
+                      Automotive Tech • Year 2
+                    </p>
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  “I earned badges, built my CV automatically, and matched with
+                  a paid internship within 3 weeks.”
+                </p>
+                <div className="mt-2 grid grid-cols-3 gap-2 text-center">
+                  <div className="chip">+2 badges</div>
+                  <div className="chip">CV ready</div>
+                  <div className="chip">Internship</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Feature highlights */}
+      <section className="section bg-[--color-surface]">
+        <div className="container-responsive grid gap-6">
+          <h2 className="text-3xl">Built for outcomes</h2>
+          <div className="grid gap-4 md:grid-cols-5">
+            {[
+              {
+                title: 'Gamified learning',
+                desc: 'XP, streaks, and missions keep motivation high.',
+              },
+              {
+                title: 'Digital badges',
+                desc: 'Verified skills via portable credentials.',
+              },
+              {
+                title: 'Auto-generated CV',
+                desc: 'One tap to export a polished resume.',
+              },
+              {
+                title: 'Job matching',
+                desc: 'Recommendations from employer needs.',
+              },
+              {
+                title: 'Leaderboards',
+                desc: 'Celebrate progress and friendly competition.',
+              },
+            ].map((f) => (
+              <div key={f.title} className="card">
+                <h3 className="text-lg">{f.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Employers portal */}
+      <section className="section bg-background">
+        <div className="container-responsive grid gap-6 md:grid-cols-2 items-center">
+          <div className="order-2 md:order-1">
+            <h2 className="text-3xl">Employers: engage early, hire faster</h2>
+            <p className="mt-3 text-muted-foreground max-w-prose">
+              Track learners, issue digital credentials, and access a verified
+              talent pool. Get insights through dashboards and reports to inform
+              hiring and training.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>• Pipeline visibility and filters</li>
+              <li>• Badge issuance and verification</li>
+              <li>• Analytics on skills supply</li>
+            </ul>
+            <div className="mt-5 flex gap-3">
+              <a href="#get-started" className="btn-primary h-11 px-5">
+                Join employer beta
+              </a>
+              <a href="#demo" className="btn-outline h-11 px-5">
+                View demo
+              </a>
+            </div>
+          </div>
+          <div className="relative h-[220px] md:h-[320px] rounded-[--radius-lg] overflow-hidden shadow-[--shadow-lg] order-1 md:order-2">
+            <Image
+              src="/globe.svg"
+              alt="Employers dashboard"
+              fill
+              className="object-contain p-10 opacity-90"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Credibility / trust */}
+      <section className="section bg-[--color-surface]">
+        <div className="container-responsive grid gap-6">
+          <h2 className="text-3xl">Why it matters</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="card text-center">
+              <p className="text-4xl font-semibold">70%+</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Of new jobs often require degrees—closing doors to STARs
+              </p>
+            </div>
+            <div className="card text-center">
+              <p className="text-4xl font-semibold">1 ecosystem</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                Students, learners, and employers connected in one place
+              </p>
+            </div>
+            <div className="card text-center">
+              <p className="text-4xl font-semibold">Mobile-first</p>
+              <p className="text-sm text-muted-foreground mt-1">
+                PWA optimized for low-bandwidth and offline moments
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section id="get-started" className="section bg-background">
+        <div className="container-responsive">
+          <div className="card flex flex-col md:flex-row items-center justify-between gap-4">
+            <div>
+              <h3 className="text-2xl">Be part of Rwanda’s skills story</h3>
+              <p className="text-muted-foreground mt-1">
+                Try the prototype with mock data today—integrations coming soon.
+              </p>
+            </div>
+            <div className="flex gap-3">
+              <a className="btn-primary h-11 px-5" href="#">
+                Try prototype
+              </a>
+              <a className="btn-outline h-11 px-5" href="#">
+                Contact us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="section bg-[--color-surface]">
+        <div className="container-responsive flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {new Date().getFullYear()} TVET Platform • Next.js + Tailwind
+          </p>
+          <div className="flex items-center gap-3 text-sm">
+            <a className="hover:underline" href="#">
+              Privacy
+            </a>
+            <a className="hover:underline" href="#">
+              Terms
+            </a>
+            <a className="hover:underline" href="#">
+              Docs
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );
