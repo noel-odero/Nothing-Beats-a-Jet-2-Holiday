@@ -137,9 +137,6 @@ export default function Home() {
             <Link href="#" className="hover:text-white">
               Success stories
             </Link>
-            <Link href="#" className="hover:text-white">
-              Contact
-            </Link>
           </div>
           <div className="flex items-center gap-3">
             <Link
