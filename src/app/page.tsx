@@ -1,268 +1,391 @@
+'use client';
+import Link from 'next/link';
 import Image from 'next/image';
+import { Play, BadgeCheck, ChevronDown } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+
+const people = [
+  {
+    name: 'Jean Bosco Nshimiyimana',
+    role: 'Electrician',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Aline Uwamariya',
+    role: 'Tailor & Fashion Designer',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Eric Ndayambaje',
+    role: 'Masonry Technician',
+    imageUrl:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+  {
+    name: 'Grace Umutoni',
+    role: 'Automotive Technician',
+    imageUrl:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+  },
+];
+
+const languages = [
+  'English',
+  'Spanish',
+  'French',
+  'German',
+  'Portuguese',
+  'Chinese',
+  'Italian',
+  'Tamil',
+  'Japanese',
+];
+
+function FAQAccordion() {
+  const items = [
+    {
+      q: 'What is text to speech (TTS)?',
+      a: 'Text to Speech converts written text into natural-sounding audio so you can listen instead of reading.',
+    },
+    {
+      q: 'What is an AI voice?',
+      a: 'An AI-generated voice that synthesizes speech with human-like prosody.',
+    },
+    {
+      q: 'How can I use Speechify?',
+      a: 'Use it on web, mobile, and browser extensions to listen to docs, PDFs, and web pages.',
+    },
+    {
+      q: 'Who is text to speech software for?',
+      a: 'Students, professionals, language learners, and anyone who benefits from listening.',
+    },
+    {
+      q: 'Do Speechify voices sound natural?',
+      a: 'Yes. Voices are lifelike and support speed control and multiple languages.',
+    },
+    {
+      q: 'What is voice cloning? Does Speechify have it?',
+      a: 'Voice cloning creates a custom voice from samples; enterprise plans support it.',
+    },
+    {
+      q: 'Does Speechify have an AI Voice API or TTS API?',
+      a: 'Yes. Developers can integrate via the API for streaming TTS and more.',
+    },
+  ];
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <div className="mx-auto max-w-3xl divide-y divide-white/10">
+      {items.map((item, idx) => {
+        const isOpen = openIndex === idx;
+        return (
+          <div key={item.q} className="py-2">
+            <button
+              className="w-full flex items-center justify-between py-3 text-left"
+              onClick={() => setOpenIndex(isOpen ? null : idx)}
+            >
+              <p className="text-white/90 text-lg">{item.q}</p>
+              <ChevronDown
+                className={`size-5 text-white/70 transition-transform duration-200 ${
+                  isOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            <div
+              className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+              }`}
+            >
+              <div className="overflow-hidden">
+                <p className="pb-4 text-white/70 text-[15px] leading-7">
+                  {item.a}
+                </p>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="font-sans">
-      {/* Hero */}
-      <section className="section bg-background">
-        <div className="container-responsive grid gap-8 md:grid-cols-2 items-center">
-          <div className="flex flex-col gap-4">
-            <span className="chip w-fit bg-[--color-accent] text-[--color-accent-foreground]">
-              Next.js + Tailwind PWA
-            </span>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
-              Make TVET attractive, transparent, and connected to industry
-            </h1>
-            <p className="text-[17px] text-muted-foreground max-w-prose">
-              A mobile-first platform linking TVET learners, prospective
-              students, and private sector institutions in one ecosystem—closing
-              Rwanda’s skills gap with stories, credentials, and real
-              opportunities.
-            </p>
-            <div className="flex items-center gap-3">
-              <a href="#get-started" className="btn-primary h-11 px-5">
-                Get started
-              </a>
-              <a href="#learn-more" className="btn-outline h-11 px-5">
-                Learn more
-              </a>
+    <div className="font-sans w-full bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] text-white">
+      <header className="border-b border-white/10">
+        <nav className="container-responsive w-full flex items-center justify-between py-4">
+          <Link href="/" className="flex items-center gap-2">
+            <div className="size-8 rounded-md bg-white/10 grid place-items-center font-bold">
+              J2UH
             </div>
-            <div className="mt-4 flex items-center gap-6 text-sm text-muted-foreground">
-              <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[--color-brand]"></span>{' '}
-                PWA, offline-ready
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[--color-brand]"></span>{' '}
-                Modular & scalable
-              </div>
-            </div>
+            <span className="sr-only">Home</span>
+          </Link>
+          <div className="hidden md:flex items-center gap-6 text-sm text-white/80">
+            <Link href="#" className="hover:text-white">
+              Home
+            </Link>
+            <Link href="#" className="hover:text-white">
+              About
+            </Link>
+            <Link href="#" className="hover:text-white">
+              Contact
+            </Link>
+            <Link href="#" className="hover:text-white">
+              Success stories
+            </Link>
+            <Link href="#" className="hover:text-white">
+              Contact
+            </Link>
           </div>
-          <div className="relative h-[260px] md:h-[380px] rounded-[--radius-lg] overflow-hidden shadow-[--shadow-lg]">
-            <Image
-              src="/window.svg"
-              alt="Platform preview"
-              fill
-              className="object-contain p-10 opacity-90"
-            />
+          <div className="flex items-center gap-3">
+            <Link
+              href="#"
+              className="hidden sm:inline text-sm text-white/80 hover:text-white"
+            >
+              Login
+            </Link>
+            <Button size="lg" className="bg-white text-black hover:bg-white/90">
+              Try for free
+            </Button>
           </div>
-        </div>
-      </section>
+        </nav>
+      </header>
 
-      {/* Audience value props */}
-      <section id="learn-more" className="section bg-[--color-surface]">
-        <div className="container-responsive grid gap-6">
-          <h2 className="text-3xl">
-            One platform. Three audiences. Shared outcomes.
-          </h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="card">
-              <h3 className="text-xl">Prospective learners</h3>
-              <p className="mt-2 text-muted-foreground">
-                Discover success stories, career roadmaps, expected salaries,
-                and accredited institutions.
+      <main>
+        <section className="container-responsive pt-12 md:pt-20 pb-32">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div className="flex flex-col gap-6">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 w-max text-xs text-white/80">
+                <span>#1 Text to Speech Reader</span>
+              </div>
+              <h1 className="text-4xl sm:text-5xl md:text-[5rem] font-extrabold tracking-tight">
+                Let Speechify read to you.
+              </h1>
+              <p className="text-white/70 max-w-xl">
+                Breeze through PDFs, books, articles, emails — anything. Listen
+                anywhere and retain more with lifelike AI voices.
               </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>• Guided exploration flows</li>
-                <li>• Salary transparency</li>
-                <li>• Institution finder</li>
-              </ul>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button
+                  size="lg"
+                  className="bg-white text-black hover:bg-white/90"
+                >
+                  Try for free
+                </Button>
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="border-white/20 text-white hover:bg-white/10"
+                >
+                  Download app
+                </Button>
+              </div>
+              <div className="flex items-center gap-6 text-xs text-white/60">
+                <span>2025 Apple Design Award</span>
+                <span>500k+ 5-star reviews</span>
+                <span>50M+ users</span>
+              </div>
             </div>
-            <div className="card">
-              <h3 className="text-xl">TVET students</h3>
-              <p className="mt-2 text-muted-foreground">
-                Gamified learning, digital badges, auto-CVs, job matching, and
-                leaderboards.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>• XP and streaks</li>
-                <li>• Verified badges</li>
-                <li>• Jobs and internships</li>
-              </ul>
-            </div>
-            <div className="card">
-              <h3 className="text-xl">Employers</h3>
-              <p className="mt-2 text-muted-foreground">
-                Track students, issue credentials, and hire from a verified
-                talent pool.
-              </p>
-              <ul className="mt-4 space-y-2 text-sm">
-                <li>• Dashboard & reports</li>
-                <li>• Digital credentialing</li>
-                <li>• Direct outreach</li>
-              </ul>
+            <div className="flex items-center gap-6 pt-60">
+              {people.map((person) => (
+                <div
+                  key={person.name}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div className="relative size-32 rounded-full overflow-hidden border border-white/20">
+                    <Image
+                      src={person.imageUrl}
+                      alt={person.name}
+                      fill
+                      sizes="128px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="text-white font-bold text-sm text-center max-w-[10rem] leading-snug">
+                    {person.name}
+                  </p>
+                  <p className="text-xs text-white/70 text-center">
+                    {person.role}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Success stories */}
-      <section className="section bg-background">
-        <div className="container-responsive grid gap-6">
-          <h2 className="text-3xl">Real stories, real outcomes</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="card flex flex-col gap-3">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-full bg-[--color-surface] border border-[--color-border]" />
-                  <div>
-                    <p className="font-medium">Alice U.</p>
-                    <p className="text-xs text-muted-foreground">
-                      Automotive Tech • Year 2
-                    </p>
+        <section className="container-responsive bg-white rounded-4xl text-black p-6 md:px-12 md:py-20 mb-20">
+          <div className="flex flex-wrap gap-3 pb-6 border-b border-black/10">
+            {languages.map((lang) => (
+              <button
+                key={lang}
+                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-black/5 px-3 py-1 text-sm hover:bg-black/10"
+              >
+                <span className="size-2 rounded-full bg-blue-600"></span>
+                {lang}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-10 pt-8 items-start">
+            <div className="space-y-5">
+              <p className="text-gray-900 text-lg font-medium leading-7">
+                I first heard about Speechify from my husband, who uses
+                Speechify for all of his reading.
+              </p>
+              <p className="text-gray-900 text-lg font-medium leading-7">
+                I love using Speechify while driving, cooking, and going for a
+                walk. I use it to listen to scripts for work and books for fun.
+              </p>
+              <p className="text-gray-900 text-lg font-medium leading-7">
+                I showed Speechify to all my friends, and now they use it too.
+              </p>
+
+              <div className="pt-4">
+                <button
+                  aria-label="Play sample"
+                  className="group relative inline-grid place-items-center size-16 rounded-full bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-[0_8px_20px_rgba(37,99,235,0.35)] hover:brightness-110"
+                >
+                  <Play className="size-7 translate-x-[2px]" />
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+              {people.map((person) => (
+                <div
+                  key={person.name}
+                  className="flex flex-col items-center gap-2"
+                >
+                  <div className="relative size-20 rounded-full overflow-hidden ring-1 ring-black/10">
+                    <Image
+                      src={person.imageUrl}
+                      alt={person.name}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="flex items-center gap-1 text-[13px] font-medium">
+                    <span>{person.name.split(' ')[0]}</span>
+                    <BadgeCheck className="size-4 text-blue-600" />
+                  </div>
+                  <div className="text-[12px] text-neutral-500">
+                    {person.role}
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground">
-                  “I earned badges, built my CV automatically, and matched with
-                  a paid internship within 3 weeks.”
-                </p>
-                <div className="mt-2 grid grid-cols-3 gap-2 text-center">
-                  <div className="chip">+2 badges</div>
-                  <div className="chip">CV ready</div>
-                  <div className="chip">Internship</div>
+              ))}
+              <div className="flex flex-col items-center justify-center gap-1 rounded-2xl border border-black/10 bg-black/[0.02] p-6">
+                <div className="size-12 rounded-full bg-black/10 grid place-items-center">
+                  <span className="text-sm font-semibold">200+</span>
                 </div>
+                <div className="text-[12px] text-neutral-600">Voices</div>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Feature highlights */}
-      <section className="section bg-[--color-surface]">
-        <div className="container-responsive grid gap-6">
-          <h2 className="text-3xl">Built for outcomes</h2>
-          <div className="grid gap-4 md:grid-cols-5">
-            {[
-              {
-                title: 'Gamified learning',
-                desc: 'XP, streaks, and missions keep motivation high.',
-              },
-              {
-                title: 'Digital badges',
-                desc: 'Verified skills via portable credentials.',
-              },
-              {
-                title: 'Auto-generated CV',
-                desc: 'One tap to export a polished resume.',
-              },
-              {
-                title: 'Job matching',
-                desc: 'Recommendations from employer needs.',
-              },
-              {
-                title: 'Leaderboards',
-                desc: 'Celebrate progress and friendly competition.',
-              },
-            ].map((f) => (
-              <div key={f.title} className="card">
-                <h3 className="text-lg">{f.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Employers portal */}
-      <section className="section bg-background">
-        <div className="container-responsive grid gap-6 md:grid-cols-2 items-center">
-          <div className="order-2 md:order-1">
-            <h2 className="text-3xl">Employers: engage early, hire faster</h2>
-            <p className="mt-3 text-muted-foreground max-w-prose">
-              Track learners, issue digital credentials, and access a verified
-              talent pool. Get insights through dashboards and reports to inform
-              hiring and training.
-            </p>
-            <ul className="mt-4 space-y-2 text-sm">
-              <li>• Pipeline visibility and filters</li>
-              <li>• Badge issuance and verification</li>
-              <li>• Analytics on skills supply</li>
-            </ul>
-            <div className="mt-5 flex gap-3">
-              <a href="#get-started" className="btn-primary h-11 px-5">
-                Join employer beta
-              </a>
-              <a href="#demo" className="btn-outline h-11 px-5">
-                View demo
-              </a>
             </div>
           </div>
-          <div className="relative h-[220px] md:h-[320px] rounded-[--radius-lg] overflow-hidden shadow-[--shadow-lg] order-1 md:order-2">
-            <Image
-              src="/globe.svg"
-              alt="Employers dashboard"
-              fill
-              className="object-contain p-10 opacity-90"
-            />
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Credibility / trust */}
-      <section className="section bg-[--color-surface]">
-        <div className="container-responsive grid gap-6">
-          <h2 className="text-3xl">Why it matters</h2>
-          <div className="grid gap-4 md:grid-cols-3">
-            <div className="card text-center">
-              <p className="text-4xl font-semibold">70%+</p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Of new jobs often require degrees—closing doors to STARs
-              </p>
-            </div>
-            <div className="card text-center">
-              <p className="text-4xl font-semibold">1 ecosystem</p>
-              <p className="text-sm text-muted-foreground mt-1">
-                Students, learners, and employers connected in one place
-              </p>
-            </div>
-            <div className="card text-center">
-              <p className="text-4xl font-semibold">Mobile-first</p>
-              <p className="text-sm text-muted-foreground mt-1">
-                PWA optimized for low-bandwidth and offline moments
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section id="get-started" className="section bg-background">
-        <div className="container-responsive">
-          <div className="card flex flex-col md:flex-row items-center justify-between gap-4">
+        <section className="container-responsive pt-12 md:pt-20 pb-32">
+          <h1 className="text-2xl sm:text-3xl text-center font-bold mb-12">
+            Featured In
+          </h1>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-white/70">
             <div>
-              <h3 className="text-2xl">Be part of Rwanda’s skills story</h3>
-              <p className="text-muted-foreground mt-1">
-                Try the prototype with mock data today—integrations coming soon.
-              </p>
+              <div className="text-2xl font-bold text-white">200+</div>
+              <div className="text-xs">Human voices</div>
             </div>
-            <div className="flex gap-3">
-              <a className="btn-primary h-11 px-5" href="#">
-                Try prototype
-              </a>
-              <a className="btn-outline h-11 px-5" href="#">
-                Contact us
-              </a>
+            <div>
+              <div className="text-2xl font-bold text-white">60+</div>
+              <div className="text-xs">Languages</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-white">4.5x</div>
+              <div className="text-xs">Read faster</div>
+            </div>
+            <div>
+              <div className="text-2xl font-bold text-white">Instant</div>
+              <div className="text-xs">AI summaries</div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Footer */}
-      <footer className="section bg-[--color-surface]">
-        <div className="container-responsive flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} TVET Platform • Next.js + Tailwind
-          </p>
-          <div className="flex items-center gap-3 text-sm">
-            <a className="hover:underline" href="#">
+        <section className="container-responsive pb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+            FAQ
+          </h2>
+          <FAQAccordion />
+        </section>
+
+        <section className="container-responsive pb-20">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-8">
+            200+ human voices. 60+ languages.
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-white font-semibold mb-1">
+                Natural narration
+              </div>
+              <p className="text-white/70 text-sm">
+                Lifelike prosody, clear pronunciation, and expressive delivery
+                for long-form listening.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-white font-semibold mb-1">
+                Multi-language
+              </div>
+              <p className="text-white/70 text-sm">
+                Switch between languages and accents seamlessly while you read.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-white font-semibold mb-1">Speed control</div>
+              <p className="text-white/70 text-sm">
+                Listen up to 4.5× faster and retain more with dual highlighting.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-white font-semibold mb-1">
+                Instant summaries
+              </div>
+              <p className="text-white/70 text-sm">
+                Get the key takeaways for any article, PDF, or document.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-white font-semibold mb-1">Scan & listen</div>
+              <p className="text-white/70 text-sm">
+                Snap a photo of any page and hear it read aloud.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+              <div className="text-white font-semibold mb-1">
+                Works everywhere
+              </div>
+              <p className="text-white/70 text-sm">
+                Google Docs, email, PDFs, web pages, and more.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer className="border-t border-white/10">
+        <div className="container-responsive py-8 text-sm text-white/60 flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-between">
+          <p>© 2025 Clone Demo. Not affiliated with Speechify.</p>
+          <div className="flex gap-4">
+            <Link href="#" className="hover:text-white">
               Privacy
-            </a>
-            <a className="hover:underline" href="#">
+            </Link>
+            <Link href="#" className="hover:text-white">
               Terms
-            </a>
-            <a className="hover:underline" href="#">
-              Docs
-            </a>
+            </Link>
+            <Link href="#" className="hover:text-white">
+              Contact
+            </Link>
           </div>
         </div>
       </footer>
