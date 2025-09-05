@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -142,9 +142,9 @@ body {
   @apply antialiased text-base leading-7;
 }
 
-h1 {
+/* h1 {
   @apply text-4xl font-semibold tracking-tight;
-}
+} */
 h2 {
   @apply text-3xl font-semibold tracking-tight;
 }
