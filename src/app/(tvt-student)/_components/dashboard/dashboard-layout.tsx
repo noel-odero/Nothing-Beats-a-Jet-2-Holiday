@@ -3,19 +3,18 @@
 import type React from "react";
 
 import { useState } from "react";
-import { Button } from "@/app/(tvt-student)/_components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/app/(tvt-student)/_components/ui/avatar";
+} from "../../_components/ui/avatar";
 import {
   BookOpen,
   Briefcase,
   Home,
   Trophy,
   User,
-  Menu,
   X,
   LogOut,
   Settings,
@@ -50,10 +49,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         />
       )}
 
-      {/* Sidebar */}
+      {/* Sidebar - hidden on mobile */}
       <div
         className={cn(
-          "fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0",
+          "fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 hidden lg:block",
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         )}
       >
@@ -121,18 +120,17 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       </div>
 
       {/* Main content */}
-      <div className="lg:pl-64">
-        {/* Top bar */}
-        <div className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+      <div className="lg:pl-64 pb-16 lg:pb-0">
+        {/* Top bar - simplified for mobile */}
+        <div className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border lg:hidden">
+          <div className="flex items-center justify-center px-4 py-3">
+            <h2 className="text-lg font-bold text-primary">TVET Skills Hub</h2>
+          </div>
+        </div>
+
+        {/* Desktop top bar */}
+        <div className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border hidden lg:block">
           <div className="flex items-center gap-4 px-4 py-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden"
-              onClick={() => setSidebarOpen(true)}
-            >
-              <Menu className="h-4 w-4" />
-            </Button>
             <div className="flex-1" />
             <div className="flex items-center gap-2">
               <Avatar className="h-8 w-8">
@@ -144,7 +142,32 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         </div>
 
         {/* Page content */}
-        <main className="p-6">{children}</main>
+        <main className="p-4 lg:p-6">{children}</main>
+      </div>
+
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-card border-t border-border lg:hidden">
+        <nav className="flex items-center justify-around px-2 py-2">
+          {navigation.map((item) => {
+            const isActive = pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 flex-1",
+                  isActive ? "text-primary" : "text-muted-foreground"
+                )}
+              >
+                <item.icon
+                  className={cn("h-5 w-5", isActive && "text-primary")}
+                />
+                <span className="truncate">
+                  {item.name === "Job Opportunities" ? "Jobs" : item.name}
+                </span>
+              </Link>
+            );
+          })}
+        </nav>
       </div>
     </div>
   );
