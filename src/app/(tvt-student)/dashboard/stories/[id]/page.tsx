@@ -1,10 +1,10 @@
-import { DashboardLayout } from "@/components/dashboard/dashboard-layout"
-import { StoryDetails } from "@/components/stories/story-details"
+import { DashboardLayout } from "@/app/(tvt-student)/_components/dashboard/dashboard-layout";
+import { StoryDetails } from "@/app/(tvt-student)/_components/stories/story-details";
 
 interface StoryPageProps {
   params: {
-    id: string
-  }
+    id: string;
+  };
 }
 
 export default function StoryPage({ params }: StoryPageProps) {
@@ -12,5 +12,5 @@ export default function StoryPage({ params }: StoryPageProps) {
     <DashboardLayout>
       <StoryDetails storyId={params.id} />
     </DashboardLayout>
-  )
+  );
 }

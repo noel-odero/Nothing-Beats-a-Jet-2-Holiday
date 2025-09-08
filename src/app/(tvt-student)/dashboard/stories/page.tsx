@@ -1,8 +1,8 @@
-import { DashboardLayout } from "@/components/dashboard/dashboard-layout"
-import { StoriesHero } from "@/components/stories/stories-hero"
-import { StoriesFilter } from "@/components/stories/stories-filter"
-import { StoriesGrid } from "@/components/stories/stories-grid"
-import { FeaturedStory } from "@/components/stories/featured-story"
+import { DashboardLayout } from "@/app/(tvt-student)/_components/dashboard/dashboard-layout";
+import { StoriesHero } from "@/app/(tvt-student)/_components/stories/stories-hero";
+import { StoriesFilter } from "@/app/(tvt-student)/_components/stories/stories-filter";
+import { StoriesGrid } from "@/app/(tvt-student)/_components/stories/stories-grid";
+import { FeaturedStory } from "@/app/(tvt-student)/_components/stories/featured-story";
 
 export default function StoriesPage() {
   return (
@@ -14,5 +14,5 @@ export default function StoriesPage() {
         <StoriesGrid />
       </div>
     </DashboardLayout>
-  )
+  );
 }

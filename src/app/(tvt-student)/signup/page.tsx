@@ -1,5 +1,11 @@
-import { SignupForm } from "@/components/auth/signup-form"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { SignupForm } from "@/app/(tvt-student)/_components/auth/signup-form";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/app/(tvt-student)/_components/ui/card";
 
 export default function SignupPage() {
   return (
@@ -7,8 +13,12 @@ export default function SignupPage() {
       <div className="w-full max-w-md">
         <Card>
           <CardHeader className="text-center">
-            <CardTitle className="text-2xl font-bold text-primary">Join TVET Skills Hub</CardTitle>
-            <CardDescription>Create your account to start learning</CardDescription>
+            <CardTitle className="text-2xl font-bold text-primary">
+              Join TVET Skills Hub
+            </CardTitle>
+            <CardDescription>
+              Create your account to start learning
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <SignupForm />
@@ -16,5 +26,5 @@ export default function SignupPage() {
         </Card>
       </div>
     </div>
-  )
+  );
 }
