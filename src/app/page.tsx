@@ -140,9 +140,14 @@ export default function Home() {
             >
               Login
             </Link>
-            <Button size="lg" className="bg-white text-black hover:bg-white/90">
-              Join as Student
-            </Button>
+            <Link href="/onboarding">
+              <Button
+                size="lg"
+                className="bg-white text-black hover:bg-white/90"
+              >
+                Join as Student
+              </Button>
+            </Link>
           </div>
         </nav>
       </header>
@@ -164,12 +169,14 @@ export default function Home() {
                 qualified graduates, and builds Rwanda&apos;s workforce.
               </p>
               <div className="flex flex-wrap items-center gap-3">
-                <Button
-                  size="lg"
-                  className="bg-white text-black hover:bg-white/90"
-                >
-                  Explore Careers
-                </Button>
+                <Link href="/onboarding">
+                  <Button
+                    size="lg"
+                    className="bg-white text-black hover:bg-white/90"
+                  >
+                    Explore Careers
+                  </Button>
+                </Link>
                 <Button
                   size="lg"
                   variant="ghost"
@@ -407,7 +414,7 @@ export default function Home() {
             <Link href="#" className="hover:text-white">
               Contact
             </Link>
-            <Link href="#" className="hover:text-white">
+            <Link href="/onboarding" className="hover:text-white">
               Sign up as Institution
             </Link>
           </div>
