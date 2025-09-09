@@ -1,70 +1,70 @@
-'use client';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Play, BadgeCheck, ChevronDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useState } from 'react';
+"use client";
+import Link from "next/link";
+import Image from "next/image";
+import { Play, BadgeCheck, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 const people = [
   {
-    name: 'Jean Bosco Nshimiyimana',
-    role: 'Electrical Engineer',
-    salary: 'RWF 450,000/month',
+    name: "Jean Bosco Nshimiyimana",
+    role: "Electrical Engineer",
+    salary: "RWF 450,000/month",
     imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: 'Aline Uwamariya',
-    role: 'Fashion Designer',
-    salary: 'RWF 380,000/month',
+    name: "Aline Uwamariya",
+    role: "Fashion Designer",
+    salary: "RWF 380,000/month",
     imageUrl:
-      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: 'Eric Ndayambaje',
-    role: 'Construction Supervisor',
-    salary: 'RWF 520,000/month',
+    name: "Eric Ndayambaje",
+    role: "Construction Supervisor",
+    salary: "RWF 520,000/month",
     imageUrl:
-      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
   {
-    name: 'Grace Umutoni',
-    role: 'Automotive Technician',
-    salary: 'RWF 400,000/month',
+    name: "Grace Umutoni",
+    role: "Automotive Technician",
+    salary: "RWF 400,000/month",
     imageUrl:
-      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
   },
 ];
 
 function FAQAccordion() {
   const items = [
     {
-      q: 'What is NextWork?',
-      a: 'NextWork is a digital platform that connects TVET students, prospective learners, and private sector institutions in Rwanda to bridge the skills gap and improve youth employability.',
+      q: "What is NextWork?",
+      a: "NextWork is a digital platform that connects TVET students, prospective learners, and private sector institutions in Rwanda to bridge the skills gap and improve youth employability.",
     },
     {
-      q: 'How does NextWork help students?',
-      a: 'We provide gamified learning experiences, digital badges, CV building tools, job matching, and leaderboards to support TVET students throughout their educational journey.',
+      q: "How does NextWork help students?",
+      a: "We provide gamified learning experiences, digital badges, CV building tools, job matching, and leaderboards to support TVET students throughout their educational journey.",
     },
     {
-      q: 'What benefits do institutions get?',
-      a: 'Institutions can issue digital credentials, track student progress, connect with qualified talent, and increase their engagement in skills development programs.',
+      q: "What benefits do institutions get?",
+      a: "Institutions can issue digital credentials, track student progress, connect with qualified talent, and increase their engagement in skills development programs.",
     },
     {
-      q: 'Is NextWork only for TVET students?',
-      a: 'No! NextWork serves prospective learners exploring career paths, current TVET students, and private sector institutions looking to invest in workforce development.',
+      q: "Is NextWork only for TVET students?",
+      a: "No! NextWork serves prospective learners exploring career paths, current TVET students, and private sector institutions looking to invest in workforce development.",
     },
     {
-      q: 'How much does it cost to use NextWork?',
-      a: 'NextWork offers free access for students and competitive pricing for institutions. Contact us to learn about our flexible plans.',
+      q: "How much does it cost to use NextWork?",
+      a: "NextWork offers free access for students and competitive pricing for institutions. Contact us to learn about our flexible plans.",
     },
     {
-      q: 'What career paths are available on NextWork?',
-      a: 'We cover all major TVET fields including electrical engineering, construction, automotive, fashion design, hospitality, and many more with transparent salary information.',
+      q: "What career paths are available on NextWork?",
+      a: "We cover all major TVET fields including electrical engineering, construction, automotive, fashion design, hospitality, and many more with transparent salary information.",
     },
     {
-      q: 'How do I get started?',
-      a: 'Simply sign up as a student to explore careers and success stories, or contact us to register your institution and start connecting with skilled graduates.',
+      q: "How do I get started?",
+      a: "Simply sign up as a student to explore careers and success stories, or contact us to register your institution and start connecting with skilled graduates.",
     },
   ];
 
@@ -83,13 +83,13 @@ function FAQAccordion() {
               <p className="text-white/90 text-lg">{item.q}</p>
               <ChevronDown
                 className={`size-5 text-white/70 transition-transform duration-200 ${
-                  isOpen ? 'rotate-180' : ''
+                  isOpen ? "rotate-180" : ""
                 }`}
               />
             </button>
             <div
               className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
               }`}
             >
               <div className="overflow-hidden">
@@ -284,7 +284,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex items-center gap-1 text-[13px] font-medium">
-                    <span>{person.name.split(' ')[0]}</span>
+                    <span>{person.name.split(" ")[0]}</span>
                     <BadgeCheck className="size-4 text-green-600" />
                   </div>
                   <div className="text-[12px] text-neutral-500">
