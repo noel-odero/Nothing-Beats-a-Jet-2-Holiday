@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -20,7 +20,13 @@ export default function Home() {
               opportunities.
             </p>
             <div className="flex items-center gap-3">
-              <a href="#get-started" className="btn-primary h-11 px-5">
+              <a href="/dashboard" className="btn-primary h-11 px-5">
+                Client Dashboard
+              </a>
+              <a href="/auth" className="btn-outline h-11 px-5">
+                Sign In
+              </a>
+              <a href="#get-started" className="btn-outline h-11 px-5">
                 Get started
               </a>
               <a href="#learn-more" className="btn-outline h-11 px-5">
@@ -29,11 +35,11 @@ export default function Home() {
             </div>
             <div className="mt-4 flex items-center gap-6 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[--color-brand]"></span>{' '}
+                <span className="size-2 rounded-full bg-[--color-brand]"></span>{" "}
                 PWA, offline-ready
               </div>
               <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-[--color-brand]"></span>{' '}
+                <span className="size-2 rounded-full bg-[--color-brand]"></span>{" "}
                 Modular & scalable
               </div>
             </div>
@@ -134,24 +140,24 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-5">
             {[
               {
-                title: 'Gamified learning',
-                desc: 'XP, streaks, and missions keep motivation high.',
+                title: "Gamified learning",
+                desc: "XP, streaks, and missions keep motivation high.",
               },
               {
-                title: 'Digital badges',
-                desc: 'Verified skills via portable credentials.',
+                title: "Digital badges",
+                desc: "Verified skills via portable credentials.",
               },
               {
-                title: 'Auto-generated CV',
-                desc: 'One tap to export a polished resume.',
+                title: "Auto-generated CV",
+                desc: "One tap to export a polished resume.",
               },
               {
-                title: 'Job matching',
-                desc: 'Recommendations from employer needs.',
+                title: "Job matching",
+                desc: "Recommendations from employer needs.",
               },
               {
-                title: 'Leaderboards',
-                desc: 'Celebrate progress and friendly competition.',
+                title: "Leaderboards",
+                desc: "Celebrate progress and friendly competition.",
               },
             ].map((f) => (
               <div key={f.title} className="card">
