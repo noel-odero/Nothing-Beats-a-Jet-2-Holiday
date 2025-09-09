@@ -91,10 +91,6 @@ export function ProfileHub() {
     <Card>
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="/student-avatar.png" />
-            <AvatarFallback>JD</AvatarFallback>
-          </Avatar>
           My Skills Passport
         </CardTitle>
       </CardHeader>

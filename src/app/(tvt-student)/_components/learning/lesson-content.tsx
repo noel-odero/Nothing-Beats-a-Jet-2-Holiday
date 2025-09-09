@@ -36,6 +36,112 @@ interface Question {
 }
 
 const lessonData = {
+  "1": {
+    title: "Intro to Welding",
+    description:
+      "Get an overview of welding, its applications, and basic concepts.",
+    totalSteps: 3,
+    xpReward: 40,
+    questions: [
+      {
+        id: "1",
+        type: "multiple-choice" as const,
+        question: "What is welding?",
+        options: [
+          "A process of joining materials by melting them together",
+          "A method of painting metal surfaces",
+          "A way to cut metal using a torch",
+          "A technique for measuring metal thickness",
+        ],
+        correctAnswer:
+          "A process of joining materials by melting them together",
+        explanation:
+          "Welding involves melting and fusing materials, usually metals, to join them.",
+        points: 10,
+      },
+      {
+        id: "2",
+        type: "true-false" as const,
+        question: "Welding is only used for joining metals.",
+        correctAnswer: "false",
+        explanation:
+          "While welding is most common with metals, it can also be used for plastics and other materials.",
+        points: 10,
+      },
+      {
+        id: "3",
+        type: "multiple-choice" as const,
+        question: "Which of the following is NOT a common welding process?",
+        options: [
+          "MIG welding",
+          "TIG welding",
+          "Arc welding",
+          "Sewing welding",
+        ],
+        correctAnswer: "Sewing welding",
+        explanation: "Sewing welding is not a recognized welding process.",
+        points: 20,
+      },
+    ],
+  },
+  "2": {
+    title: "Safety Basics",
+    description:
+      "Understand essential safety practices and equipment for welding.",
+    totalSteps: 4,
+    xpReward: 60,
+    questions: [
+      {
+        id: "1",
+        type: "multiple-choice" as const,
+        question: "Which item is essential for eye protection during welding?",
+        options: ["Safety glasses", "Welding helmet", "Face mask", "Ear plugs"],
+        correctAnswer: "Welding helmet",
+        explanation:
+          "A welding helmet protects your eyes and face from sparks and harmful light.",
+        points: 15,
+      },
+      {
+        id: "2",
+        type: "true-false" as const,
+        question: "Wearing gloves is optional when welding.",
+        correctAnswer: "false",
+        explanation:
+          "Gloves are necessary to protect your hands from burns and electric shock.",
+        points: 10,
+      },
+      {
+        id: "3",
+        type: "multiple-choice" as const,
+        question: "What should you do before starting any welding work?",
+        options: [
+          "Check equipment for damage",
+          "Remove all safety signs",
+          "Wear sandals",
+          "Ignore ventilation",
+        ],
+        correctAnswer: "Check equipment for damage",
+        explanation:
+          "Inspecting equipment ensures safety and prevents accidents.",
+        points: 15,
+      },
+      {
+        id: "4",
+        type: "multiple-choice" as const,
+        question: "Why is proper ventilation important in welding areas?",
+        options: [
+          "To keep the area cool",
+          "To remove harmful fumes",
+          "To reduce noise",
+          "To improve lighting",
+        ],
+        correctAnswer: "To remove harmful fumes",
+        explanation:
+          "Welding produces fumes that can be hazardous if not properly ventilated.",
+        points: 20,
+      },
+    ],
+  },
   "4": {
     title: "Metal Preparation",
     description:

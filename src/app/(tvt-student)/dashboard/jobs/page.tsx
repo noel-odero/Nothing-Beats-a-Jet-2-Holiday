@@ -14,7 +14,7 @@ export default function JobsPage() {
           </p>
         </div>
 
-        <JobStats />
+        {/* <JobStats /> */}
         <JobSearch />
         <JobList />
       </div>

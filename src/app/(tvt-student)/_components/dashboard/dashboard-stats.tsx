@@ -12,7 +12,7 @@ export function DashboardStats() {
     {
       title: "Learning Progress",
       value: "68%",
-      description: "Course completion",
+      description: "Main Course completion",
       icon: BookOpen,
       progress: 68,
       color: "text-primary",

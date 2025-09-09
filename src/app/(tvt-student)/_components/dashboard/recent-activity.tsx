@@ -66,7 +66,7 @@ export function RecentActivity() {
 
   return (
     <div className="space-y-6">
-      <Card>
+      {/* <Card>
         <CardHeader>
           <CardTitle className="text-lg">Recent Activity</CardTitle>
         </CardHeader>
@@ -83,7 +83,7 @@ export function RecentActivity() {
             </div>
           ))}
         </CardContent>
-      </Card>
+      </Card> */}
 
       <Card>
         <CardHeader>
