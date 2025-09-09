@@ -1,10 +1,10 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color tokens to match professional hiring dashboard design brief */
+  * Updated color tokens to match professional hiring dashboard design brief
   --background: oklch(1 0 0);
   --foreground: oklch(0.205 0 0);
   --card: oklch(0.97 0 0);
@@ -123,4 +123,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
+} */

@@ -1,5 +1,5 @@
-import { HiringDashboard } from "@/components/hiring-dashboard"
+import { HiringDashboard } from "@/components/hiring-dashboard";
 
 export default function Page() {
-  return <HiringDashboard />
+  return <HiringDashboard />;
 }
