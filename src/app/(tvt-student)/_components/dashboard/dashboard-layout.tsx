@@ -25,10 +25,14 @@ import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: Home },
-  { name: "Learning", href: "/dashboard/learning", icon: BookOpen },
-  { name: "Job Opportunities", href: "/dashboard/jobs", icon: Briefcase },
-  { name: "Success Stories", href: "/dashboard/stories", icon: Trophy },
-  { name: "Profile", href: "/dashboard/profile", icon: User },
+  { name: "Learning", href: "/student/dashboard/learning", icon: BookOpen },
+  {
+    name: "Job Opportunities",
+    href: "/student/dashboard/jobs",
+    icon: Briefcase,
+  },
+  { name: "Success Stories", href: "/student/dashboard/stories", icon: Trophy },
+  { name: "Profile", href: "/student/dashboard/profile", icon: User },
 ];
 
 interface DashboardLayoutProps {

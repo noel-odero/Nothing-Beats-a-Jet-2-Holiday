@@ -209,7 +209,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4">Lesson not found</h2>
-        <Link href="/dashboard/learning">
+        <Link href="/student/dashboard/learning">
           <Button>Back to Learning Path</Button>
         </Link>
       </div>
@@ -350,7 +350,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <Link href="/dashboard/learning">
+        <Link href="/student/dashboard/learning">
           <Button variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Learning Path

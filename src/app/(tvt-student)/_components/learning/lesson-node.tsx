@@ -29,7 +29,7 @@ export function LessonNode({
     if (status === "locked") return;
     if (isJumpNode) {
       // Navigate to advanced section
-      router.push("/dashboard/learning/advanced");
+      router.push("/student/dashboard/learning/advanced");
       return;
     }
     // Navigate to specific lesson

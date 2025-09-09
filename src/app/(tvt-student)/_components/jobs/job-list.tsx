@@ -123,7 +123,7 @@ export function JobList() {
       <div className="grid gap-4">
         {jobs.map((job) => (
           <Card key={job.id} className="hover:shadow-md transition-shadow">
-            <CardHeader className="pb-3">
+            <CardHeader className="">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3">
                   <Avatar className="h-12 w-12">
@@ -135,20 +135,6 @@ export function JobList() {
                   <div>
                     <h4 className="font-semibold text-lg">{job.title}</h4>
                     <p className="text-muted-foreground">{job.company}</p>
-                    <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {job.location}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Clock className="h-4 w-4" />
-                        {job.postedDate}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <Users className="h-4 w-4" />
-                        {job.applicants} applicants
-                      </div>
-                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -174,6 +160,20 @@ export function JobList() {
             </CardHeader>
             <CardContent className="pt-0">
               <div className="space-y-4">
+                <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-1">
+                    <MapPin className="h-4 w-4" />
+                    {job.location}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    {job.postedDate}
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <Users className="h-4 w-4" />
+                    {job.applicants} applicants
+                  </div>
+                </div>
                 <div className="flex items-center gap-4 text-sm">
                   <Badge variant="outline">{job.type}</Badge>
                   <div className="flex items-center gap-1">

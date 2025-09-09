@@ -1,4 +1,4 @@
-import { DashboardLayout } from "../_components/dashboard/dashboard-layout";
+import { DashboardLayout } from "../../_components/dashboard/dashboard-layout";
 import { ProfileHub } from "@/app/(tvt-student)/_components/dashboard/profile-hub";
 import { DashboardStats } from "@/app/(tvt-student)/_components/dashboard/dashboard-stats";
 import { RecentActivity } from "@/app/(tvt-student)/_components/dashboard/recent-activity";

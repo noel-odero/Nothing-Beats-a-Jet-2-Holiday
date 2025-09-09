@@ -100,7 +100,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4">Job not found</h2>
-        <Link href="/dashboard/jobs">
+        <Link href="/student/dashboard/jobs">
           <Button>Back to Jobs</Button>
         </Link>
       </div>
@@ -126,7 +126,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <Link href="/dashboard/jobs">
+        <Link href="/student/dashboard/jobs">
           <Button variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Jobs

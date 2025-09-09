@@ -111,15 +111,15 @@ export function JobSearch() {
           </div>
 
           <div className="flex gap-2">
-            <Button variant="outline" size="sm">
+            {/* <Button variant="outline" size="sm">
               <Filter className="h-4 w-4 mr-2" />
               More Filters
-            </Button>
+            </Button> */}
             <Button size="sm">Search Jobs</Button>
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2">
+        {/* <div className="flex flex-wrap gap-2">
           <span className="text-sm text-muted-foreground">
             Suggested skills:
           </span>
@@ -134,7 +134,7 @@ export function JobSearch() {
               + {skill}
             </Button>
           ))}
-        </div>
+        </div> */}
       </CardContent>
     </Card>
   );

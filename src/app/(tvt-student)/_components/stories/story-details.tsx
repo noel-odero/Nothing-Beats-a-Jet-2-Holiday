@@ -128,7 +128,7 @@ export function StoryDetails({ storyId }: StoryDetailsProps) {
     return (
       <div className="text-center py-12">
         <h2 className="text-2xl font-bold mb-4">Story not found</h2>
-        <Link href="/dashboard/stories">
+        <Link href="/student/dashboard/stories">
           <Button>Back to Success Stories</Button>
         </Link>
       </div>
@@ -139,7 +139,7 @@ export function StoryDetails({ storyId }: StoryDetailsProps) {
     <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
-        <Link href="/dashboard/stories">
+        <Link href="/student/dashboard/stories">
           <Button variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Stories
