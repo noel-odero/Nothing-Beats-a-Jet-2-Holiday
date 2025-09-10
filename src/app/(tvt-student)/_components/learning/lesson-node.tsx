@@ -73,12 +73,18 @@ export function LessonNode({
             status !== "locked" ? "cursor-pointer" : "cursor-not-allowed"
           } hover:bg-opacity-90 transition-colors shadow-lg`}
         >
-          {icon}
+          {status !== "locked" ? (
+            icon
+          ) : (
+            <Lock className="text-white/80 w-8 h-8" />
+          )}
         </div>
         {title && (
           <div
             className={`mt-2 text-sm ${
-              status === "locked" ? "text-muted-foreground" : "font-medium"
+              status === "locked"
+                ? "text-muted-foreground"
+                : "text-white/80 font-medium"
             }`}
           >
             {title}

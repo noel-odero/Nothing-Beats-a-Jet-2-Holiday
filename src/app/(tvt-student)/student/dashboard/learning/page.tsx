@@ -1,5 +1,6 @@
 import { DashboardLayout } from "@/app/(tvt-student)/_components/dashboard/dashboard-layout";
 import { LearningPath } from "@/app/(tvt-student)/_components/learning/learning-path";
+import { LearningStats } from "@/app/(tvt-student)/_components/learning/learning-stats";
 
 export default function LearningPage() {
   return (
@@ -19,10 +20,13 @@ export default function LearningPage() {
           </div>
         </section>
 
-        {/* <LearningStats /> */}
-
-        <section className="mb-8">
-          <LearningPath />
+        <section className="flex mb-8">
+          <div className="flex-3">
+            <LearningPath />
+          </div>
+          <div className="flex-1">
+            <LearningStats />
+          </div>
         </section>
       </div>
     </DashboardLayout>

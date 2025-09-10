@@ -128,11 +128,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Main content */}
       <div className="lg:pl-64 pb-16 lg:pb-0">
         {/* Top bar - simplified for mobile */}
-        <div className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border lg:hidden">
+        {/* <div className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border lg:hidden">
           <div className="flex items-center justify-center px-4 py-3">
             <h2 className="text-lg font-bold text-primary">NextWork</h2>
           </div>
-        </div>
+        </div> */}
 
         {/* Desktop top bar */}
         <div className="sticky top-0 z-30  bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] border-b border-border hidden lg:block">
