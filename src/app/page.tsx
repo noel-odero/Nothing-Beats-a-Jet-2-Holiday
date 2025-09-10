@@ -1,70 +1,71 @@
-"use client";
-import Link from "next/link";
-import Image from "next/image";
-import { Play, BadgeCheck, ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
+'use client';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Play, BadgeCheck, ChevronDown, Star } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
+import { mockReviews, Review } from '@/lib/mock';
 
 const people = [
   {
-    name: "Jean Bosco Nshimiyimana",
-    role: "Electrical Engineer",
-    salary: "RWF 450,000/month",
+    name: 'Jean Bosco Nshimiyimana',
+    role: 'Electrical Engineer',
+    salary: 'RWF 450,000/month',
     imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
-    name: "Aline Uwamariya",
-    role: "Fashion Designer",
-    salary: "RWF 380,000/month",
+    name: 'Aline Uwamariya',
+    role: 'Fashion Designer',
+    salary: 'RWF 380,000/month',
     imageUrl:
-      "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
-    name: "Eric Ndayambaje",
-    role: "Construction Supervisor",
-    salary: "RWF 520,000/month",
+    name: 'Eric Ndayambaje',
+    role: 'Construction Supervisor',
+    salary: 'RWF 520,000/month',
     imageUrl:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
   {
-    name: "Grace Umutoni",
-    role: "Automotive Technician",
-    salary: "RWF 400,000/month",
+    name: 'Grace Umutoni',
+    role: 'Automotive Technician',
+    salary: 'RWF 400,000/month',
     imageUrl:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
   },
 ];
 
 function FAQAccordion() {
   const items = [
     {
-      q: "What is NextWork?",
-      a: "NextWork is a digital platform that connects TVET students, prospective learners, and private sector institutions in Rwanda to bridge the skills gap and improve youth employability.",
+      q: 'What is NextWork?',
+      a: 'NextWork is a digital platform that connects TVET students, prospective learners, and private sector institutions in Rwanda to bridge the skills gap and improve youth employability.',
     },
     {
-      q: "How does NextWork help students?",
-      a: "We provide gamified learning experiences, digital badges, CV building tools, job matching, and leaderboards to support TVET students throughout their educational journey.",
+      q: 'How does NextWork help students?',
+      a: 'We provide gamified learning experiences, digital badges, CV building tools, job matching, and leaderboards to support TVET students throughout their educational journey.',
     },
     {
-      q: "What benefits do institutions get?",
-      a: "Institutions can issue digital credentials, track student progress, connect with qualified talent, and increase their engagement in skills development programs.",
+      q: 'What benefits do institutions get?',
+      a: 'Institutions can issue digital credentials, track student progress, connect with qualified talent, and increase their engagement in skills development programs.',
     },
     {
-      q: "Is NextWork only for TVET students?",
-      a: "No! NextWork serves prospective learners exploring career paths, current TVET students, and private sector institutions looking to invest in workforce development.",
+      q: 'Is NextWork only for TVET students?',
+      a: 'No! NextWork serves prospective learners exploring career paths, current TVET students, and private sector institutions looking to invest in workforce development.',
     },
     {
-      q: "How much does it cost to use NextWork?",
-      a: "NextWork offers free access for students and competitive pricing for institutions. Contact us to learn about our flexible plans.",
+      q: 'How much does it cost to use NextWork?',
+      a: 'NextWork offers free access for students and competitive pricing for institutions. Contact us to learn about our flexible plans.',
     },
     {
-      q: "What career paths are available on NextWork?",
-      a: "We cover all major TVET fields including electrical engineering, construction, automotive, fashion design, hospitality, and many more with transparent salary information.",
+      q: 'What career paths are available on NextWork?',
+      a: 'We cover all major TVET fields including electrical engineering, construction, automotive, fashion design, hospitality, and many more with transparent salary information.',
     },
     {
-      q: "How do I get started?",
-      a: "Simply sign up as a student to explore careers and success stories, or contact us to register your institution and start connecting with skilled graduates.",
+      q: 'How do I get started?',
+      a: 'Simply sign up as a student to explore careers and success stories, or contact us to register your institution and start connecting with skilled graduates.',
     },
   ];
 
@@ -83,13 +84,13 @@ function FAQAccordion() {
               <p className="text-white/90 text-lg">{item.q}</p>
               <ChevronDown
                 className={`size-5 text-white/70 transition-transform duration-200 ${
-                  isOpen ? "rotate-180" : ""
+                  isOpen ? 'rotate-180' : ''
                 }`}
               />
             </button>
             <div
               className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
               }`}
             >
               <div className="overflow-hidden">
@@ -106,6 +107,7 @@ function FAQAccordion() {
 }
 
 export default function Home() {
+  const reviews: Review[] = mockReviews;
   return (
     <div className="font-sans w-full bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] text-white">
       <header className="border-b border-white/10">
@@ -135,7 +137,7 @@ export default function Home() {
           </div>
           <div className="flex items-center gap-3">
             <Link
-              href="#"
+              href="/auth"
               className="hidden sm:inline text-sm text-white/80 hover:text-white"
             >
               Login
@@ -284,7 +286,7 @@ export default function Home() {
                     />
                   </div>
                   <div className="flex items-center gap-1 text-[13px] font-medium">
-                    <span>{person.name.split(" ")[0]}</span>
+                    <span>{person.name.split(' ')[0]}</span>
                     <BadgeCheck className="size-4 text-green-600" />
                   </div>
                   <div className="text-[12px] text-neutral-500">
@@ -328,6 +330,52 @@ export default function Home() {
               <div className="text-2xl font-bold text-white">RWF 400K+</div>
               <div className="text-xs">Average Starting Salary</div>
             </div>
+          </div>
+        </section>
+
+        <section className="container-responsive pb-12 md:pb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+            What people say
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.map((r) => (
+              <div
+                key={r.id}
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition-colors"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="relative size-20 rounded-full overflow-hidden border border-white/15">
+                    <Image
+                      src={r.avatar}
+                      alt={r.author}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 text-white font-semibold">
+                      <span>{r.author}</span>
+                    </div>
+                    <div className="text-xs text-white/60">{r.role}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`size-4 ${
+                        i < r.rating ? 'text-yellow-400' : 'text-white/20'
+                      }`}
+                      fill={i < r.rating ? '#facc15' : 'none'}
+                    />
+                  ))}
+                </div>
+                <p className="text-white/80 leading-7 text-[15px]">
+                  {r.content}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 

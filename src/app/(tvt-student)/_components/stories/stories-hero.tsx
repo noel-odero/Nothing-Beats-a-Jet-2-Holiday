@@ -45,7 +45,7 @@ export function StoriesHero() {
             </Badge>
           </div>
           <p className="text-sm">
-            Since you're studying <strong>Welding Technology</strong>, we've
+Since you&apos;re studying <strong>Welding Technology</strong>, we&apos;ve
             curated stories from successful welders and related fields to
             inspire your journey.
           </p>

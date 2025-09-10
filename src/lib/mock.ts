@@ -65,6 +65,15 @@ export interface LeaderboardEntry {
   careerPath: string;
 }
 
+export interface Review {
+  id: string;
+  author: string;
+  role: string;
+  avatar: string;
+  rating: number; // 1-5
+  content: string;
+}
+
 export const mockStudent: Student = {
   id: '1',
   name: 'Jean Bosco Nshimiyimana',
@@ -282,5 +291,88 @@ export const mockLeaderboard: LeaderboardEntry[] = [
     rank: 4,
     level: 9,
     careerPath: 'Automotive',
+  },
+];
+
+export const mockReviews: Review[] = [
+  {
+    id: 'r1',
+    author: 'Jenemarie',
+    role: 'Student, Hospitality',
+    avatar:
+      'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 5,
+    content:
+      'Amazing! I have ADHD and I love to read but had piles of books I never touched. This helped me learn better and study efficiently. I recommend it to everyone!',
+  },
+  {
+    id: 'r2',
+    author: 'Ali Abdalla',
+    role: 'Productivity Enthusiast',
+    avatar:
+      'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 5,
+    content:
+      'If there is one hill I’ll die on, it’s that learning faster is the best way forward. This platform is a game‑changer for me.',
+  },
+  {
+    id: 'r3',
+    author: 'Gwyneth Paltrow',
+    role: 'Actress & Businesswoman',
+    avatar:
+      'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 5,
+    content:
+      'It makes it easy to learn at 2× or even 3× the speed you read with your eyes.',
+  },
+  {
+    id: 'r4',
+    author: 'Sir Richard Branson',
+    role: 'Business Magnate',
+    avatar:
+      'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 5,
+    content:
+      'Growing up with dyslexia this would have made a big difference. I’m so glad to have it today.',
+  },
+  {
+    id: 'r5',
+    author: 'Theodota',
+    role: 'Resident Doctor',
+    avatar:
+      'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 5,
+    content:
+      'I listen to PDFs while walking to clinic, running, and making coffee in the morning. It saves me a ton of time.',
+  },
+  {
+    id: 'r6',
+    author: 'Aline Uwamariya',
+    role: 'Fashion Design Student',
+    avatar:
+      'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 4,
+    content:
+      'I used to spend hours reading assignments. Listening has been totally life‑changing.',
+  },
+  {
+    id: 'r7',
+    author: 'Eric Ndayambaje',
+    role: 'Construction Supervisor',
+    avatar:
+      'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 5,
+    content:
+      'Top 5 apps of all time for me. You can literally finish an entire book in a day.',
+  },
+  {
+    id: 'r8',
+    author: 'Grace Umutoni',
+    role: 'Automotive Technician',
+    avatar:
+      'https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+    rating: 4,
+    content:
+      'Great for commuting. I learn while on the bus and during breaks, without losing focus.',
   },
 ];
