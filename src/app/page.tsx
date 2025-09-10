@@ -1,9 +1,10 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Play, BadgeCheck, ChevronDown } from 'lucide-react';
+import { Play, BadgeCheck, ChevronDown, Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import { mockReviews, Review } from '@/lib/mock';
 
 const people = [
   {
@@ -106,6 +107,7 @@ function FAQAccordion() {
 }
 
 export default function Home() {
+  const reviews: Review[] = mockReviews;
   return (
     <div className="font-sans w-full bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] text-white">
       <header className="border-b border-white/10">
@@ -328,6 +330,52 @@ export default function Home() {
               <div className="text-2xl font-bold text-white">RWF 400K+</div>
               <div className="text-xs">Average Starting Salary</div>
             </div>
+          </div>
+        </section>
+
+        <section className="container-responsive pb-12 md:pb-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-12">
+            What people say
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {reviews.map((r) => (
+              <div
+                key={r.id}
+                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 hover:bg-white/[0.06] transition-colors"
+              >
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="relative size-20 rounded-full overflow-hidden border border-white/15">
+                    <Image
+                      src={r.avatar}
+                      alt={r.author}
+                      fill
+                      sizes="80px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 text-white font-semibold">
+                      <span>{r.author}</span>
+                    </div>
+                    <div className="text-xs text-white/60">{r.role}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-1 mb-4">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star
+                      key={i}
+                      className={`size-4 ${
+                        i < r.rating ? 'text-yellow-400' : 'text-white/20'
+                      }`}
+                      fill={i < r.rating ? '#facc15' : 'none'}
+                    />
+                  ))}
+                </div>
+                <p className="text-white/80 leading-7 text-[15px]">
+                  {r.content}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
 
