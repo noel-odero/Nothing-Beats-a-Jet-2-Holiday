@@ -7,11 +7,23 @@ import { FeaturedStory } from "@/app/(tvt-student)/_components/stories/featured-
 export default function StoriesPage() {
   return (
     <DashboardLayout>
-      <div className="space-y-6">
-        <StoriesHero />
-        <FeaturedStory />
-        <StoriesFilter />
-        <StoriesGrid />
+      <div className="space-y-8">
+        <section className="mb-8">
+          <StoriesHero />
+        </section>
+
+        <section className="mb-8">
+          <FeaturedStory />
+        </section>
+
+        <section className="mb-8">
+          <div className="bg-white border-slate-200 shadow-sm rounded-lg p-6">
+            <StoriesFilter />
+            <div className="mt-6">
+              <StoriesGrid />
+            </div>
+          </div>
+        </section>
       </div>
     </DashboardLayout>
   );

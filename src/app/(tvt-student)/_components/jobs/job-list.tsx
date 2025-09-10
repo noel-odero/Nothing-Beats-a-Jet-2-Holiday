@@ -195,7 +195,7 @@ export function JobList() {
                 </div>
 
                 <div className="flex items-center justify-between pt-2">
-                  <Link href={`/dashboard/jobs/${job.id}`}>
+                  <Link href={`/student/dashboard/jobs/${job.id}`}>
                     <Button variant="outline" size="sm">
                       View Details
                     </Button>

@@ -1,6 +1,6 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
+"use client";
+import { useState } from "react";
+import Image from "next/image";
 import {
   Flame,
   Star,
@@ -14,9 +14,9 @@ import {
   X,
   Award,
   Target,
-} from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import {
   mockStudent,
   mockPathway,
@@ -24,7 +24,7 @@ import {
   mockSoftSkills,
   mockJobs,
   mockLeaderboard,
-} from '@/lib/mock';
+} from "@/lib/mock";
 
 export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -40,7 +40,7 @@ export default function Dashboard() {
   const leaderboard = mockLeaderboard;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 text-white">
       {/* Header */}
       <header className="border-b border-slate-200 sticky top-0 z-40 bg-white/80 backdrop-blur-md">
         <div className="container-responsive flex items-center justify-between py-4">
@@ -55,7 +55,7 @@ export default function Dashboard() {
                 <Menu className="size-5" />
               )}
             </button>
-            <h1 className="text-xl font-bold text-slate-900">Dashboard</h1>
+            <h1 className="text-xl font-bold text-white">Dashboard</h1>
           </div>
 
           <div className="flex items-center gap-4">
@@ -96,14 +96,14 @@ export default function Dashboard() {
                 />
               </div>
               <div className="flex-1">
-                <h2 className="text-2xl font-bold mb-1 text-slate-900">
-                  Welcome back, {currentStudent.name.split(' ')[0]}!
+                <h2 className="text-2xl font-bold mb-1 text-white">
+                  Welcome back, {currentStudent.name.split(" ")[0]}!
                 </h2>
                 <p className="text-slate-600">
-                  You&apos;ve earned{' '}
+                  You&apos;ve earned{" "}
                   <span className="text-yellow-600 font-semibold">
                     {currentStudent.weeklyXp} XP
-                  </span>{' '}
+                  </span>{" "}
                   this week
                 </p>
               </div>
@@ -148,7 +148,7 @@ export default function Dashboard() {
               </div>
               <div>
                 <p className="text-sm text-slate-600">Weekly Goal</p>
-                <p className="text-lg font-semibold text-slate-900">
+                <p className="text-lg font-semibold text-white">
                   {currentStudent.weeklyXp}/500 XP
                 </p>
               </div>
@@ -158,13 +158,13 @@ export default function Dashboard() {
           {/* Pathways Section */}
           <section className="mb-8">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-slate-900">
+              <h3 className="text-xl font-bold text-white">
                 Your Learning Path
               </h3>
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-slate-600 hover:text-slate-900"
+                className="text-slate-600 hover:text-white"
               >
                 View full roadmap <ChevronRight className="size-4 ml-1" />
               </Button>
@@ -172,7 +172,7 @@ export default function Dashboard() {
 
             <Card className="bg-white border-slate-200 shadow-sm p-6">
               <div className="mb-4">
-                <h4 className="text-lg font-semibold mb-1 text-slate-900">
+                <h4 className="text-lg font-semibold mb-1 text-white">
                   {currentStudent.careerPath}
                 </h4>
                 <p className="text-slate-600 text-sm">
@@ -188,16 +188,16 @@ export default function Dashboard() {
                   >
                     <div
                       className={`relative size-16 rounded-full flex items-center justify-center text-2xl ${
-                        node.status === 'completed'
-                          ? 'bg-green-500'
-                          : node.status === 'unlocked'
-                          ? 'bg-blue-500'
-                          : 'bg-gray-400'
+                        node.status === "completed"
+                          ? "bg-green-500"
+                          : node.status === "unlocked"
+                          ? "bg-blue-500"
+                          : "bg-gray-400"
                       }`}
                     >
-                      {node.status === 'completed' ? (
+                      {node.status === "completed" ? (
                         <CheckCircle className="size-8 text-white" />
-                      ) : node.status === 'locked' ? (
+                      ) : node.status === "locked" ? (
                         <Lock className="size-6 text-white" />
                       ) : (
                         <span>{node.icon}</span>
@@ -209,7 +209,7 @@ export default function Dashboard() {
                       </p>
                       <p className="text-xs text-slate-500">{node.xp} XP</p>
                     </div>
-                    {node.status === 'unlocked' && (
+                    {node.status === "unlocked" && (
                       <Button
                         size="sm"
                         className="bg-blue-600 hover:bg-blue-700 text-white"
@@ -226,7 +226,7 @@ export default function Dashboard() {
 
           {/* Certificates Section */}
           <section className="mb-8">
-            <h3 className="text-xl font-bold mb-6 text-slate-900">
+            <h3 className="text-xl font-bold mb-6 text-white">
               Your Certificates
             </h3>
             <div className="grid md:grid-cols-2 gap-4">
@@ -246,7 +246,7 @@ export default function Dashboard() {
                       />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold mb-1 text-slate-900">
+                      <h4 className="font-semibold mb-1 text-white">
                         {cert.title}
                       </h4>
                       <p className="text-slate-600 text-sm mb-2">
@@ -262,7 +262,7 @@ export default function Dashboard() {
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="text-slate-600 hover:text-slate-900"
+                          className="text-slate-600 hover:text-white"
                           onClick={() => setSelectedCertificate(cert.id)}
                         >
                           <Eye className="size-3 mr-1" />
@@ -271,7 +271,7 @@ export default function Dashboard() {
                         <Button
                           size="sm"
                           variant="ghost"
-                          className="text-slate-600 hover:text-slate-900"
+                          className="text-slate-600 hover:text-white"
                         >
                           <Share2 className="size-3 mr-1" />
                           Share
@@ -292,7 +292,7 @@ export default function Dashboard() {
                   <Target className="size-6 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h4 className="text-lg font-semibold mb-2 text-slate-900">
+                  <h4 className="text-lg font-semibold mb-2 text-white">
                     Next Steps
                   </h4>
                   <p className="text-slate-700 mb-3">
@@ -310,11 +310,11 @@ export default function Dashboard() {
           {/* Jobs for You */}
           <section className="mb-8">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-slate-900">Jobs for You</h3>
+              <h3 className="text-xl font-bold text-white">Jobs for You</h3>
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-slate-600 hover:text-slate-900"
+                className="text-slate-600 hover:text-white"
               >
                 See all jobs <ChevronRight className="size-4 ml-1" />
               </Button>
@@ -327,7 +327,7 @@ export default function Dashboard() {
                 >
                   <div className="flex items-start justify-between mb-3">
                     <div>
-                      <h4 className="font-semibold mb-1 text-slate-900">
+                      <h4 className="font-semibold mb-1 text-white">
                         {job.title}
                       </h4>
                       <p className="text-slate-600 text-sm">{job.company}</p>
@@ -361,11 +361,11 @@ export default function Dashboard() {
           {/* Leaderboard */}
           <section className="mb-8">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-slate-900">Leaderboard</h3>
+              <h3 className="text-xl font-bold text-white">Leaderboard</h3>
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-slate-600 hover:text-slate-900"
+                className="text-slate-600 hover:text-white"
               >
                 View full leaderboard <ChevronRight className="size-4 ml-1" />
               </Button>
@@ -387,15 +387,13 @@ export default function Dashboard() {
                       />
                     </div>
                     <div className="flex-1">
-                      <p className="font-medium text-slate-900">{entry.name}</p>
+                      <p className="font-medium text-white">{entry.name}</p>
                       <p className="text-slate-600 text-sm">
                         {entry.careerPath}
                       </p>
                     </div>
                     <div className="text-right">
-                      <p className="font-semibold text-slate-900">
-                        {entry.xp} XP
-                      </p>
+                      <p className="font-semibold text-white">{entry.xp} XP</p>
                       <p className="text-slate-600 text-sm">
                         Level {entry.level}
                       </p>
@@ -409,13 +407,13 @@ export default function Dashboard() {
 
         {/* Sidebar */}
         <aside
-          className={`${sidebarOpen ? 'translate-x-0' : 'translate-x-full'} 
+          className={`${sidebarOpen ? "translate-x-0" : "translate-x-full"} 
           fixed md:relative md:translate-x-0 top-0 right-0 h-full w-80 bg-white border-l border-slate-200 
           transition-transform duration-300 z-30 md:z-auto shadow-lg`}
         >
           <div className="p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-white">
                 Boost Your Soft Skills
               </h3>
               <button
@@ -439,7 +437,7 @@ export default function Dashboard() {
                       {skill.icon}
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold mb-1 text-slate-900">
+                      <h4 className="font-semibold mb-1 text-white">
                         {skill.title}
                       </h4>
                       <p className="text-slate-600 text-sm mb-2">
@@ -488,9 +486,9 @@ export default function Dashboard() {
       {/* Certificate Modal */}
       {selectedCertificate && (
         <div className="fixed inset-0 bg-black/30 z-50 flex items-center justify-center p-4">
-          <Card className="bg-white text-slate-900 max-w-md w-full p-6 shadow-xl">
+          <Card className="bg-white text-white max-w-md w-full p-6 shadow-xl">
             <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-bold text-slate-900">
+              <h3 className="text-lg font-bold text-white">
                 Certificate Details
               </h3>
               <button
@@ -518,7 +516,7 @@ export default function Dashboard() {
       {/* Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-slate-200 md:hidden shadow-lg">
         <div className="flex items-center justify-around py-2">
-          <button className="flex flex-col items-center gap-1 p-2 text-slate-900">
+          <button className="flex flex-col items-center gap-1 p-2 text-white">
             <div className="size-6 rounded-full bg-slate-200" />
             <span className="text-xs">Home</span>
           </button>
@@ -526,7 +524,7 @@ export default function Dashboard() {
             <div className="size-6 rounded-full bg-slate-100" />
             <span className="text-xs">Explore</span>
           </button>
-          <button className="flex flex-col items-center gap-1 p-2 text-slate-900">
+          <button className="flex flex-col items-center gap-1 p-2 text-white">
             <div className="size-6 rounded-full bg-blue-600" />
             <span className="text-xs">Learn</span>
           </button>

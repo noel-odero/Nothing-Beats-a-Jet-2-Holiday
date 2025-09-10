@@ -33,7 +33,7 @@ export function LessonNode({
       return;
     }
     // Navigate to specific lesson
-    router.push(`/dashboard/learning/lesson/${lessonId || "intro"}`);
+    router.push(`/student/dashboard/learning/lesson/${lessonId || "intro"}`);
   };
   const getNodeStyles = () => {
     if (isStart) {
@@ -66,7 +66,7 @@ export function LessonNode({
   return (
     <div className={`mb-6 ${getPositionStyles()}`}>
       <div className="text-center">
-        {isStart && <div className="text-primary font-bold mb-2">START</div>}
+        {isStart && <div className="text-white font-bold mb-2">START</div>}
         <div
           onClick={handleClick}
           className={`w-[72px] h-[72px] ${getNodeStyles()} rounded-full flex items-center justify-center ${

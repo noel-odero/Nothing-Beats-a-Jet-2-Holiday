@@ -300,7 +300,7 @@ export function StoriesGrid() {
                     />
                   </Button>
                 </div>
-                <Link href={`/dashboard/stories/${story.id}`}>
+                <Link href={`/student/dashboard/stories/${story.id}`}>
                   <Button variant="outline" size="sm">
                     Read More <ArrowRight className="h-3 w-3 ml-1" />
                   </Button>
