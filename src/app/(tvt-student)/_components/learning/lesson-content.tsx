@@ -351,20 +351,11 @@ export function LessonContent({ lessonId }: LessonContentProps) {
       {/* Header */}
       <div className="flex items-center justify-between">
         <Link href="/student/dashboard/learning">
-          <Button variant="ghost" size="sm">
+          <Button className="text-white" variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Learning Path
           </Button>
         </Link>
-        <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
-            <Star className="h-4 w-4 text-yellow-500" />
-            <span className="font-medium">{score} XP</span>
-          </div>
-          <Badge variant="outline">
-            Step {currentStep + 1} of {lesson.totalSteps}
-          </Badge>
-        </div>
       </div>
 
       {/* Progress */}

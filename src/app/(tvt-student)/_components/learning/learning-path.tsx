@@ -100,17 +100,6 @@ export function LearningPath() {
           </div>
           <LessonNode status="locked" position="center" isJumpNode />
         </div>
-        {/* Progress Bar */}
-        <div className="fixed top-4 right-4 flex items-center gap-4">
-          <div className="flex items-center gap-2 bg-muted px-3 py-1 rounded-full">
-            <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-            <span className="text-sm">5</span>
-          </div>
-          <div className="flex items-center gap-2 bg-muted px-3 py-1 rounded-full">
-            <Star className="w-4 h-4 text-yellow-500" />
-            <span className="text-sm">500</span>
-          </div>
-        </div>
       </div>
     </div>
   );
@@ -306,7 +295,7 @@ function ProgramPath() {
                       <div className="flex-shrink-0">
                         {lesson.status !== "locked" && (
                           <Link
-                            href={`/dashboard/learning/lesson/${lesson.id}`}
+                            href={`/student/dashboard/learning/lesson/${lesson.id}`}
                           >
                             <Button
                               variant={
@@ -528,7 +517,7 @@ function SoftSkillsPath() {
                       <div className="flex-shrink-0">
                         {lesson.status !== "locked" && (
                           <Link
-                            href={`/dashboard/learning/lesson/${lesson.id}`}
+                            href={`/student/dashboard/learning/lesson/${lesson.id}`}
                           >
                             <Button
                               variant={

@@ -33,7 +33,7 @@ export function LessonNode({
       return;
     }
     // Navigate to specific lesson
-    router.push(`/dashboard/learning/lesson/${lessonId || "intro"}`);
+    router.push(`/student/dashboard/learning/lesson/${lessonId || "intro"}`);
   };
   const getNodeStyles = () => {
     if (isStart) {
@@ -66,19 +66,25 @@ export function LessonNode({
   return (
     <div className={`mb-6 ${getPositionStyles()}`}>
       <div className="text-center">
-        {isStart && <div className="text-primary font-bold mb-2">START</div>}
+        {isStart && <div className="text-white font-bold mb-2">START</div>}
         <div
           onClick={handleClick}
           className={`w-[72px] h-[72px] ${getNodeStyles()} rounded-full flex items-center justify-center ${
             status !== "locked" ? "cursor-pointer" : "cursor-not-allowed"
           } hover:bg-opacity-90 transition-colors shadow-lg`}
         >
-          {icon}
+          {status !== "locked" ? (
+            icon
+          ) : (
+            <Lock className="text-white/80 w-8 h-8" />
+          )}
         </div>
         {title && (
           <div
             className={`mt-2 text-sm ${
-              status === "locked" ? "text-muted-foreground" : "font-medium"
+              status === "locked"
+                ? "text-muted-foreground"
+                : "text-white/80 font-medium"
             }`}
           >
             {title}

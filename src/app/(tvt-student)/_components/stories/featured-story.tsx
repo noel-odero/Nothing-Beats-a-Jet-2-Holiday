@@ -99,7 +99,7 @@ export function FeaturedStory() {
               Aerospace
             </Badge>
           </div>
-          <Link href={`/dashboard/stories/${featuredStory.id}`}>
+          <Link href={`/student/dashboard/stories/${featuredStory.id}`}>
             <Button>
               Read Full Story <ArrowRight className="h-4 w-4 ml-2" />
             </Button>
