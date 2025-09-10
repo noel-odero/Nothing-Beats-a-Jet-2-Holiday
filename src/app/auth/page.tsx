@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import TextType from "@/components/ui/TextType";
-import { useState } from "react";
+import TextType from '@/components/ui/TextType';
+import { useState } from 'react';
 
 export default function AuthPage() {
   const [rightPanelActive, setRightPanelActive] = useState(false);
 
   return (
-    <section className="flex justify-center items-center min-h-screen bg-[#f6f5f7] font-[Montserrat]">
+    <section className="flex justify-center items-center min-h-screen bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] text-white font-[Montserrat]">
       <div
-        className={`bg-white rounded-[10px] shadow-[0_14px_28px_rgba(0,0,0,0.25),0_10px_10px_rgba(0,0,0,0.22)] relative overflow-hidden w-[768px] max-w-full min-h-[480px] transition-all duration-700 ${
-          rightPanelActive ? "right-panel-active" : ""
+        className={`bg-white/5 border border-white/10 backdrop-blur rounded-[10px] shadow-[0_14px_28px_rgba(0,0,0,0.25),0_10px_10px_rgba(0,0,0,0.22)] relative overflow-hidden w-[768px] max-w-full min-h-[480px] transition-all duration-700 ${
+          rightPanelActive ? 'right-panel-active' : ''
         }`}
         id="container"
       >
@@ -18,33 +18,33 @@ export default function AuthPage() {
         <div
           className={`absolute top-0 h-full transition-all duration-700 ease-in-out left-0 w-1/2 z-10 flex items-center justify-center flex-col ${
             rightPanelActive
-              ? "translate-x-full opacity-100 z-20"
-              : "opacity-0 z-1"
+              ? 'translate-x-full opacity-100 z-20'
+              : 'opacity-0 z-1'
           }`}
         >
-          <form className="bg-white flex flex-col items-center justify-center px-[50px] h-full text-center w-full">
-            <h1 className="font-bold m-0">Create Account</h1>
+          <form className="bg-transparent flex flex-col items-center justify-center px-[50px] h-full text-center w-full">
+            <h1 className="font-bold m-0 text-white">Create Account</h1>
             <input
               type="text"
               placeholder="Name"
-              className="bg-[#eee] border-none px-[15px] py-[12px] my-2 w-full"
+              className="bg-white/10 placeholder:text-white/60 text-white border border-white/10 rounded px-[15px] py-[12px] my-2 w-full outline-none focus:ring-2 focus:ring-white/20"
             />
             <input
               type="email"
               placeholder="Email"
-              className="bg-[#eee] border-none px-[15px] py-[12px] my-2 w-full"
+              className="bg-white/10 placeholder:text-white/60 text-white border border-white/10 rounded px-[15px] py-[12px] my-2 w-full outline-none focus:ring-2 focus:ring-white/20"
             />
             <input
               type="password"
               placeholder="Password"
-              className="bg-[#eee] border-none px-[15px] py-[12px] my-2 w-full"
+              className="bg-white/10 placeholder:text-white/60 text-white border border-white/10 rounded px-[15px] py-[12px] my-2 w-full outline-none focus:ring-2 focus:ring-white/20"
             />
             <input
               type="password"
               placeholder="Confirm password"
-              className="bg-[#eee] border-none px-[15px] py-[12px] my-2 w-full"
+              className="bg-white/10 placeholder:text-white/60 text-white border border-white/10 rounded px-[15px] py-[12px] my-2 w-full outline-none focus:ring-2 focus:ring-white/20"
             />
-            <button className="rounded-[20px] border border-[#ff4b2b] bg-[#ff4b2b] text-white text-[12px] font-bold px-[45px] py-[12px] tracking-[1px] uppercase transition-transform duration-75 ease-in active:scale-95 focus:outline-none mt-4">
+            <button className="rounded-[20px] border border-transparent bg-white text-black text-[12px] font-bold px-[45px] py-[12px] tracking-[1px] uppercase transition-colors duration-150 hover:bg-white/90 active:scale-95 focus:outline-none mt-4">
               Sign Up
             </button>
           </form>
@@ -52,28 +52,28 @@ export default function AuthPage() {
         {/* Sign In */}
         <div
           className={`absolute top-0 h-full transition-all duration-700 ease-in-out left-0 w-1/2 z-20 flex items-center justify-center flex-col ${
-            rightPanelActive ? "opacity-0 z-1" : "opacity-100 z-20"
+            rightPanelActive ? 'opacity-0 z-1' : 'opacity-100 z-20'
           }`}
         >
-          <form className="bg-white flex flex-col items-center justify-center px-[50px] h-full text-center w-full">
-            <h1 className="font-bold m-0">Sign In</h1>
+          <form className="bg-transparent flex flex-col items-center justify-center px-[50px] h-full text-center w-full">
+            <h1 className="font-bold m-0 text-white">Sign In</h1>
             <input
               type="email"
               placeholder="Email"
-              className="bg-[#eee] border-none px-[15px] py-[12px] my-2 w-full"
+              className="bg-white/10 placeholder:text-white/60 text-white border border-white/10 rounded px-[15px] py-[12px] my-2 w-full outline-none focus:ring-2 focus:ring-white/20"
             />
             <input
               type="password"
               placeholder="Password"
-              className="bg-[#eee] border-none px-[15px] py-[12px] my-2 w-full"
+              className="bg-white/10 placeholder:text-white/60 text-white border border-white/10 rounded px-[15px] py-[12px] my-2 w-full outline-none focus:ring-2 focus:ring-white/20"
             />
             <a
               href="#"
-              className="text-[#333] text-[14px] no-underline my-[15px]"
+              className="text-white/80 hover:text-white text-[14px] no-underline my-[15px]"
             >
               Forgot your password?
             </a>
-            <button className="rounded-[20px] border border-[#ff4b2b] bg-[#ff4b2b] text-white text-[12px] font-bold px-[45px] py-[12px] tracking-[1px] uppercase transition-transform duration-75 ease-in active:scale-95 focus:outline-none mt-4">
+            <button className="rounded-[20px] border border-transparent bg-white text-black text-[12px] font-bold px-[45px] py-[12px] tracking-[1px] uppercase transition-colors duration-150 hover:bg-white/90 active:scale-95 focus:outline-none mt-4">
               Sign In
             </button>
           </form>
@@ -81,23 +81,23 @@ export default function AuthPage() {
         {/* Overlay */}
         <div
           className={`absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-transform duration-700 z-[100] ${
-            rightPanelActive ? "-translate-x-full" : ""
+            rightPanelActive ? '-translate-x-full' : ''
           }`}
         >
           <div
-            className={`bg-gradient-to-r from-[#ff4b2b] to-[#ff416c] bg-no-repeat bg-cover bg-left text-white relative left-[-100%] h-full w-[200%] transform transition-transform duration-700 ${
-              rightPanelActive ? "translate-x-1/2" : ""
+            className={`bg-gradient-to-r from-green-500 to-green-600 bg-no-repeat bg-cover bg-left text-white relative left-[-100%] h-full w-[200%] transform transition-transform duration-700 ${
+              rightPanelActive ? 'translate-x-1/2' : ''
             }`}
           >
             <div
               className={`absolute flex items-center justify-center flex-col px-[40px] text-center top-0 h-full w-1/2 transform transition-transform duration-700 ${
-                rightPanelActive ? "-translate-x-0" : "-translate-x-1/5"
+                rightPanelActive ? '-translate-x-0' : '-translate-x-1/5'
               }`}
             >
               {/* <h1 className="font-bold m-0">Welcome Back!</h1> */}
               <TextType
-                text={"Welcome Back!"}
-                as={"h1"}
+                text={'Welcome Back!'}
+                as={'h1'}
                 className="font-bold m-0"
               />
               {/* <p className="text-[14px] font-light leading-5 tracking-[0.5px] my-5 mb-[30px]">
@@ -105,7 +105,7 @@ export default function AuthPage() {
               </p> */}
               <TextType
                 text={
-                  "To keep connected with us please login with your personal info"
+                  'To keep connected with us please login with your personal info'
                 }
                 className="text-[14px] font-light leading-5 tracking-[0.5px] my-5 mb-[30px]"
                 showCursor={false}
@@ -120,12 +120,12 @@ export default function AuthPage() {
             </div>
             <div
               className={`absolute flex items-center justify-center flex-col px-[40px] text-center top-0 h-full w-1/2 right-0 transform transition-transform duration-700 ${
-                rightPanelActive ? "translate-x-1/5" : ""
+                rightPanelActive ? 'translate-x-1/5' : ''
               }`}
             >
               <TextType
-                text={"Hello, Friend!"}
-                as={"h1"}
+                text={'Hello, Friend!'}
+                as={'h1'}
                 className="font-bold m-0"
               />
               {/* <h1 className="font-bold m-0">Hello, Friend!</h1> */}
@@ -134,7 +134,7 @@ export default function AuthPage() {
               </p> */}
               <TextType
                 className="text-[14px] font-light leading-5 tracking-[0.5px] my-5 mb-[30px]"
-                text={"Enter your personal details and start journey with us"}
+                text={'Enter your personal details and start journey with us'}
                 showCursor={false}
               />
               <button
