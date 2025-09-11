@@ -20,7 +20,7 @@ export default function LearningPage() {
           </div>
         </section>
 
-        <section className="flex mb-8">
+        <section className="flex flex-col md:flex-row mb-8">
           <div className="flex-3">
             <LearningPath />
           </div>
