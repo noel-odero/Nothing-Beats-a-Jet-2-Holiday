@@ -88,9 +88,9 @@ export function ProfileHub() {
   ];
 
   return (
-    <Card>
+    <Card className="border border-white/10 bg-white/5 ">
       <CardHeader>
-        <CardTitle className="flex items-center gap-2">
+        <CardTitle className="flex text-white text-sm font-medium items-center gap-2">
           My Skills Passport
         </CardTitle>
       </CardHeader>

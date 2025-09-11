@@ -220,7 +220,7 @@ function ProgramPath() {
 
   return (
     <div className="space-y-6">
-      <Card>
+      <Card className="border border-white/10 bg-white/5">
         <CardContent className="p-6">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold">Welding Technology Path</h3>

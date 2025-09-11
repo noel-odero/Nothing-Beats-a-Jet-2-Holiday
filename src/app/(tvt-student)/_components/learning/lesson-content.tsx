@@ -359,23 +359,25 @@ export function LessonContent({ lessonId }: LessonContentProps) {
       </div>
 
       {/* Progress */}
-      <Card>
+      <Card className="border border-white/10 bg-white/5">
         <CardContent className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <h1 className="text-2xl font-bold">{lesson.title}</h1>
+            <h1 className="text-white text-2xl font-bold">{lesson.title}</h1>
             <span className="text-sm text-muted-foreground">
               {Math.round(progress)}% complete
             </span>
           </div>
           <Progress value={progress} className="mb-2" />
-          <p className="text-muted-foreground">{lesson.description}</p>
+          <p className="text-white/80">{lesson.description}</p>
         </CardContent>
       </Card>
 
       {/* Question */}
-      <Card>
+      <Card className="border border-white/10 bg-white/5">
         <CardHeader>
-          <CardTitle className="text-lg">{currentQuestion.question}</CardTitle>
+          <CardTitle className="text-white text-lg">
+            {currentQuestion.question}
+          </CardTitle>
         </CardHeader>
         <CardContent className="space-y-6">
           {renderQuestion()}
@@ -405,7 +407,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
                 ) : (
                   <X className="h-5 w-5 text-red-600" />
                 )}
-                <span className="font-medium">
+                <span className="font-medium border border-white/10 bg-white/5">
                   {(
                     currentQuestion.type === "drag-drop"
                       ? JSON.stringify(dragItems) ===
@@ -425,7 +427,8 @@ export function LessonContent({ lessonId }: LessonContentProps) {
               Previous
             </Button>
             {!showResult ? (
-              <Button
+              <button
+                className="border border-white/10 bg-white/5 p-1 px-4 rounded-md text-white"
                 onClick={handleSubmit}
                 disabled={
                   !selectedAnswer &&
@@ -434,7 +437,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
                 }
               >
                 Submit Answer
-              </Button>
+              </button>
             ) : (
               <Button onClick={handleNext}>
                 {currentStep < lesson.questions.length - 1 ? (

@@ -39,7 +39,7 @@ export function JobSearch() {
   ];
 
   return (
-    <Card>
+    <Card className="border border-white/10 bg-white/5 ">
       <CardContent className="p-6 space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div className="relative">
@@ -48,7 +48,7 @@ export function JobSearch() {
               placeholder="Search jobs..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10"
+              className="pl-10 text-white"
             />
           </div>
 
@@ -58,15 +58,15 @@ export function JobSearch() {
               placeholder="Location"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="pl-10"
+              className="pl-10 text-white"
             />
           </div>
 
           <Select value={jobType} onValueChange={setJobType}>
             <SelectTrigger>
-              <SelectValue placeholder="Job Type" />
+              <SelectValue className="text-white" placeholder="Job Type" />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent style={{ color: "white" }} className="text-white">
               <SelectItem value="full-time">Full Time</SelectItem>
               <SelectItem value="part-time">Part Time</SelectItem>
               <SelectItem value="internship">Internship</SelectItem>
@@ -77,11 +77,14 @@ export function JobSearch() {
 
           <Select value={skillFilter} onValueChange={setSkillFilter}>
             <SelectTrigger>
-              <SelectValue placeholder="Required Skills" />
+              <SelectValue
+                className="text-white"
+                placeholder="Required Skills"
+              />
             </SelectTrigger>
-            <SelectContent>
+            <SelectContent className="text-white">
               {suggestedSkills.map((skill) => (
-                <SelectItem key={skill} value={skill}>
+                <SelectItem className="text-white" key={skill} value={skill}>
                   {skill}
                 </SelectItem>
               ))}
@@ -115,7 +118,9 @@ export function JobSearch() {
               <Filter className="h-4 w-4 mr-2" />
               More Filters
             </Button> */}
-            <Button size="sm">Search Jobs</Button>
+            <Button variant={"secondary"} size="sm">
+              Search Jobs
+            </Button>
           </div>
         </div>
 
