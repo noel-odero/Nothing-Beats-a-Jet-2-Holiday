@@ -119,7 +119,9 @@ export function ProfileHub() {
                       }`}
                     />
                     <div>
-                      <p className="font-medium">{credential.title}</p>
+                      <p className="text-white/80 font-medium">
+                        {credential.title}
+                      </p>
                       <p className="text-sm text-muted-foreground">
                         {credential.type} • {credential.date}
                       </p>
@@ -147,12 +149,14 @@ export function ProfileHub() {
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="font-medium">{skill.name}</p>
+                      <p className="text-white/80 font-medium">{skill.name}</p>
                       <p className="text-sm text-muted-foreground">
                         {skill.category}
                       </p>
                     </div>
-                    <span className="text-sm font-medium">{skill.level}%</span>
+                    <span className="text-muted-foreground text-sm font-medium">
+                      {skill.level}%
+                    </span>
                   </div>
                   <Progress value={skill.level} />
                 </div>
@@ -164,7 +168,9 @@ export function ProfileHub() {
             <div className="text-center space-y-4">
               <div className="p-6 border-2 border-dashed border-border rounded-lg">
                 <QrCode className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="font-semibold mb-2">Digital Skills CV</h3>
+                <h3 className="font-semibold mb-2 text-white">
+                  Digital Skills CV
+                </h3>
                 <p className="text-sm text-muted-foreground mb-4">
                   Your auto-generated CV with verified badges and skills
                 </p>
@@ -180,7 +186,7 @@ export function ProfileHub() {
                 </div>
               </div>
               <div className="text-left space-y-2">
-                <h4 className="font-medium">CV Includes:</h4>
+                <h4 className="font-medium text-white">CV Includes:</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Verified certificates and badges</li>
                   <li>• Skills competency levels</li>
@@ -194,8 +200,10 @@ export function ProfileHub() {
           <TabsContent value="ranking" className="space-y-4">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <h4 className="font-medium">Welding Technology Program</h4>
-                <Badge variant="outline">
+                <h4 className="font-medium text-white">
+                  Welding Technology Program
+                </h4>
+                <Badge className="text-white/80" variant="outline">
                   <Users className="h-3 w-3 mr-1" />
                   156 students
                 </Badge>
@@ -203,15 +211,15 @@ export function ProfileHub() {
               {rankings.map((student) => (
                 <div
                   key={student.rank}
-                  className={`flex items-center justify-between p-3 rounded-lg ${
+                  className={`flex border border-white/10 items-center justify-between p-3 rounded-lg ${
                     student.isCurrentUser
-                      ? "bg-primary/10 border border-primary/20"
-                      : "bg-muted/50"
+                      ? "bg-white/20 border border-primary/20"
+                      : "bg-white/5"
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
-                      className={`flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${
+                      className={` flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${
                         student.rank <= 3
                           ? "bg-primary text-primary-foreground"
                           : "bg-muted text-muted-foreground"
@@ -220,7 +228,7 @@ export function ProfileHub() {
                       {student.rank <= 3 ? (
                         <Trophy className="h-4 w-4" />
                       ) : (
-                        student.rank
+                        <p className="text-white">{student.rank}</p>
                       )}
                     </div>
                     <Avatar className="h-8 w-8">
@@ -228,7 +236,7 @@ export function ProfileHub() {
                     </Avatar>
                     <div>
                       <p
-                        className={`font-medium ${
+                        className={`text-white/80 font-medium ${
                           student.isCurrentUser ? "text-primary" : ""
                         }`}
                       >
@@ -240,7 +248,7 @@ export function ProfileHub() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium">{student.score}</p>
+                    <p className="font-medium text-white/80">{student.score}</p>
                     <p className="text-sm text-muted-foreground">XP</p>
                   </div>
                 </div>
