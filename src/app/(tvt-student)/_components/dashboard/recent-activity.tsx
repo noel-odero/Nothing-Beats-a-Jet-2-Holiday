@@ -85,9 +85,9 @@ export function RecentActivity() {
         </CardContent>
       </Card> */}
 
-      <Card>
+      <Card className="border border-white/10 bg-white/5 ">
         <CardHeader>
-          <CardTitle className="text-lg">Upcoming Events</CardTitle>
+          <CardTitle className="text-white text-lg">Upcoming Events</CardTitle>
         </CardHeader>
         <CardContent className="space-y-3">
           {upcomingEvents.map((event, index) => (
@@ -96,10 +96,12 @@ export function RecentActivity() {
               className="flex items-center justify-between p-3 border rounded-lg"
             >
               <div>
-                <p className="font-medium text-sm">{event.title}</p>
+                <p className="text-white/80 font-medium text-sm">
+                  {event.title}
+                </p>
                 <p className="text-xs text-muted-foreground">{event.date}</p>
               </div>
-              <Badge variant="outline" className="text-xs">
+              <Badge variant="outline" className="text-xs text-white/80">
                 {event.type}
               </Badge>
             </div>

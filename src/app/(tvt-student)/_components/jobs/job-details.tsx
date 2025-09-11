@@ -98,7 +98,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
 
   if (!job) {
     return (
-      <div className="text-center py-12">
+      <div className="text-center text-white py-12">
         <h2 className="text-2xl font-bold mb-4">Job not found</h2>
         <Link href="/student/dashboard/jobs">
           <Button>Back to Jobs</Button>
@@ -127,7 +127,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
       {/* Header */}
       <div className="flex items-center justify-between">
         <Link href="/student/dashboard/jobs">
-          <Button variant="ghost" size="sm">
+          <Button className="text-white" variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Jobs
           </Button>
@@ -147,7 +147,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
           {/* Job Header */}
-          <Card>
+          <Card className="border border-white/10 bg-white/5">
             <CardHeader>
               <div className="flex items-start gap-4">
                 <Avatar className="h-16 w-16">
@@ -157,9 +157,9 @@ export function JobDetails({ jobId }: JobDetailsProps) {
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <h1 className="text-2xl font-bold">{job.title}</h1>
+                  <h1 className="text-2xl text-white font-bold">{job.title}</h1>
                   <p className="text-lg text-muted-foreground">{job.company}</p>
-                  <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
+                  <div className="flex items-center gap-4 mt-2 text-sm text-white/80">
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
                       {job.location}
@@ -173,21 +173,14 @@ export function JobDetails({ jobId }: JobDetailsProps) {
                       {job.applicants} applicants
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 mt-3">
-                    <Badge variant="outline">{job.type}</Badge>
+                  <div className="flex text-white/80 items-center gap-4 mt-3">
+                    <Badge className="text-white/80" variant="outline">
+                      {job.type}
+                    </Badge>
                     <div className="flex items-center gap-1 text-sm">
                       <DollarSign className="h-4 w-4" />
                       {job.salary}
                     </div>
-                    <Badge
-                      className={cn(
-                        "text-xs font-medium",
-                        getMatchColor(job.matchPercentage)
-                      )}
-                    >
-                      <Star className="h-3 w-3 mr-1" />
-                      {job.matchPercentage}% match
-                    </Badge>
                   </div>
                 </div>
               </div>
@@ -195,11 +188,11 @@ export function JobDetails({ jobId }: JobDetailsProps) {
           </Card>
 
           {/* Job Description */}
-          <Card>
+          <Card className="border border-white/10 bg-white/5 ">
             <CardHeader>
-              <CardTitle>Job Description</CardTitle>
+              <CardTitle className="text-white">Job Description</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 text-white/80">
               <p>{job.description}</p>
 
               <div>
@@ -244,13 +237,13 @@ export function JobDetails({ jobId }: JobDetailsProps) {
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Skills Match */}
-          <Card>
+          <Card className="border border-white/10 bg-white/5 ">
             <CardHeader>
-              <CardTitle className="text-lg">Skills Match</CardTitle>
+              <CardTitle className="text-white text-lg">Skills Match</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">
+                <div className="text-3xl text-white/80 font-bold">
                   {job.matchPercentage}%
                 </div>
                 <p className="text-sm text-muted-foreground">Overall Match</p>
@@ -260,7 +253,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
                 {job.requiredSkills.map((skill) => (
                   <div
                     key={skill}
-                    className="flex items-center justify-between text-sm"
+                    className="flex text-white/80 items-center justify-between text-sm"
                   >
                     <span>{skill}</span>
                     <CheckCircle className="h-4 w-4 text-primary" />
@@ -271,16 +264,18 @@ export function JobDetails({ jobId }: JobDetailsProps) {
           </Card>
 
           {/* Company Info */}
-          <Card>
+          <Card className="border border-white/10 bg-white/5 ">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+              <CardTitle className="text-white text-lg flex items-center gap-2">
                 <Building className="h-5 w-5" />
                 About Company
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div>
-                <h4 className="font-medium">{job.companyInfo.name}</h4>
+                <h4 className="font-medium text-white">
+                  {job.companyInfo.name}
+                </h4>
                 <p className="text-sm text-muted-foreground">
                   {job.companyInfo.description}
                 </p>
@@ -288,35 +283,42 @@ export function JobDetails({ jobId }: JobDetailsProps) {
               <Separator />
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Industry:</span>
-                  <span>{job.companyInfo.industry}</span>
+                  <span className="text-white">Industry:</span>
+                  <span className="text-muted-foreground">
+                    {job.companyInfo.industry}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Company Size:</span>
-                  <span>{job.companyInfo.size}</span>
+                  <span className="text-white">Company Size:</span>
+                  <span className="text-muted-foreground">
+                    {job.companyInfo.size}
+                  </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-muted-foreground">Founded:</span>
-                  <span>{job.companyInfo.founded}</span>
+                  <span className="text-white">Founded:</span>
+                  <span className="text-muted-foreground">
+                    {job.companyInfo.founded}
+                  </span>
                 </div>
               </div>
             </CardContent>
           </Card>
 
           {/* Quick Apply */}
-          <Card>
+          <Card className="border border-white/10 bg-white/5 ">
             <CardHeader>
-              <CardTitle className="text-lg flex items-center gap-2">
+              <CardTitle className="text-lg text-white flex items-center gap-2">
                 <FileText className="h-5 w-5" />
                 Quick Apply
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-white/50">
                 Apply with your Skills CV that includes verified badges and
                 competencies.
               </p>
               <Button
+                variant="secondary"
                 onClick={handleApply}
                 className="w-full"
                 disabled={isApplying}

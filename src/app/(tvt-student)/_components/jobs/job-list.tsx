@@ -122,7 +122,10 @@ export function JobList() {
 
       <div className="grid gap-4">
         {jobs.map((job) => (
-          <Card key={job.id} className="hover:shadow-md transition-shadow">
+          <Card
+            key={job.id}
+            className="border border-white/10 bg-white/5 hover:shadow-md transition-shadow"
+          >
             <CardHeader className="">
               <div className="flex items-start justify-between">
                 <div className="flex items-start gap-3">
@@ -133,34 +136,17 @@ export function JobList() {
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <h4 className="font-semibold text-lg">{job.title}</h4>
+                    <h4 className="text-white font-semibold text-lg">
+                      {job.title}
+                    </h4>
                     <p className="text-muted-foreground">{job.company}</p>
                   </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Badge
-                    className={cn(
-                      "text-xs font-medium",
-                      getMatchColor(job.matchPercentage)
-                    )}
-                  >
-                    <Star className="h-3 w-3 mr-1" />
-                    {job.matchPercentage}% match
-                  </Badge>
-                  <Button variant="ghost" size="sm">
-                    <Bookmark
-                      className={cn(
-                        "h-4 w-4",
-                        job.isBookmarked && "fill-current"
-                      )}
-                    />
-                  </Button>
                 </div>
               </div>
             </CardHeader>
             <CardContent className="pt-0">
               <div className="space-y-4">
-                <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
+                <div className="flex text-white/80 items-center gap-4 mt-1 text-sm">
                   <div className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />
                     {job.location}
@@ -174,15 +160,17 @@ export function JobList() {
                     {job.applicants} applicants
                   </div>
                 </div>
-                <div className="flex items-center gap-4 text-sm">
-                  <Badge variant="outline">{job.type}</Badge>
+                <div className="flex text-white items-center gap-4 text-sm">
+                  <Badge className="text-white/80" variant="outline">
+                    {job.type}
+                  </Badge>
                   <div className="flex items-center gap-1">
                     <DollarSign className="h-4 w-4" />
                     {job.salary}
                   </div>
                 </div>
 
-                <p className="text-sm text-muted-foreground line-clamp-2">
+                <p className="text-sm text-white/80 line-clamp-2">
                   {job.description}
                 </p>
 
