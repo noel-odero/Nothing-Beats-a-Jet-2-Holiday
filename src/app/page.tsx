@@ -187,13 +187,13 @@ export default function Home() {
                   See Success Stories
                 </Button>
               </div>
-              <div className="flex items-center gap-6 text-xs text-white/60">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs text-white/60">
                 <span>500+ Students Connected</span>
                 <span>50+ Partner Institutions</span>
                 <span>95% Job Placement Rate</span>
               </div>
             </div>
-            <div className="flex items-center gap-6 pt-60">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 pt-10 md:pt-60">
               {people.map((person) => (
                 <div
                   key={person.name}
