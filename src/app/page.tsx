@@ -147,7 +147,7 @@ export default function Home() {
                 size="lg"
                 className="bg-white text-black hover:bg-white/90"
               >
-                Join as Student
+                Join Nextwork
               </Button>
             </Link>
           </div>
