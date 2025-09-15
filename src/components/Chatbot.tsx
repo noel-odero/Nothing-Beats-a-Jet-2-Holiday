@@ -32,7 +32,7 @@ export default function Chatbot() {
       <button
         aria-label="Open chat"
         onClick={() => setOpen((v) => !v)}
-        className="fixed bottom-6 right-6 z-50 bg-[var(--brand-primary)] hover:bg-[var(--brand-secondary)] text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition border-2 border-[var(--brand-accent)]"
+        className="fixed bottom-6 right-6 z-50 bg-[var(--brand-primary)]/70 cursor-pointer hover:border-green-400 hover:-translate-y-1 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg transition border-2 border-white"
       >
         <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
           <circle
@@ -56,22 +56,20 @@ export default function Chatbot() {
 
       {/* Chat Window */}
       {open && (
-        <div className="fixed bottom-24 right-6 z-50 w-80 bg-[var(--surface)] dark:bg-[var(--surface-contrast)] rounded-xl shadow-2xl flex flex-col overflow-hidden border border-[var(--brand-accent)]">
+        <div className="fixed bottom-24 right-6 z-50 w-80 bg-[var(--surface)] dark:bg-[var(--surface-contrast)] rounded-md shadow-2xl flex flex-col overflow-hidden border border-white/80">
           <div className="flex items-center justify-between px-4 py-2 bg-[var(--brand-primary)] text-[var(--brand-accent)]">
-            <span className="font-semibold text-[var(--brand-accent)]">
-              Chatbot
-            </span>
+            <span className="font-semibold text-secondary">Chatbot</span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Close chat"
               className="text-[var(--brand-accent)] hover:text-[var(--brand-secondary)]"
             >
-              <XIcon />
+              <XIcon className="text-white/80" />
             </button>
           </div>
           <div className="flex-1 p-4 space-y-2 overflow-y-auto max-h-80">
             {messages.length === 0 && (
-              <div className="text-[var(--brand-muted)] text-sm text-center">
+              <div className="text-white text-sm text-center">
                 How can I help you?
               </div>
             )}
@@ -83,10 +81,10 @@ export default function Chatbot() {
                 }`}
               >
                 <div
-                  className={`px-3 py-2 rounded-lg text-sm max-w-[70%] ${
+                  className={`px-3 py-2 rounded-md text-sm max-w-[70%] ${
                     msg.sender === "user"
-                      ? "bg-[var(--brand-secondary)] text-white"
-                      : "bg-[var(--brand-accent)] text-[var(--brand-primary)]"
+                      ? "bg-white/80 text-[var(--brand-primary)]"
+                      : "bg-gray-700 text-white"
                   }`}
                 >
                   {msg.text}
@@ -95,7 +93,7 @@ export default function Chatbot() {
             ))}
           </div>
           <form
-            className="flex border-t border-[var(--brand-accent)]"
+            className="flex border-t border-white/80"
             onSubmit={(e) => {
               e.preventDefault();
               handleSend();
@@ -103,7 +101,7 @@ export default function Chatbot() {
           >
             <input
               ref={inputRef}
-              className="flex-1 px-3 py-2 outline-none bg-transparent text-[var(--brand-primary)] dark:text-[var(--brand-accent)]"
+              className="flex-1 px-3 py-2 outline-none bg-transparent text-white dark:text-[var(--brand-accent)]"
               placeholder="Type your message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -111,7 +109,7 @@ export default function Chatbot() {
             />
             <button
               type="submit"
-              className="px-4 text-[var(--brand-primary)] font-semibold hover:text-[var(--brand-secondary)]"
+              className="px-4 text-white font-semibold hover:text-[var(--brand-secondary)]"
               disabled={!input.trim()}
             >
               Send
