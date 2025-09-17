@@ -13,7 +13,6 @@ export type CertificatePDFProps = {
   brand?: string;
   logoUrl?: string;
   certificateNo?: string;
-  certificateUrl?: string;
   referenceNo?: string;
   courseTitle: string;
   instructors?: string;
@@ -43,95 +42,263 @@ Font.register({
 const styles = StyleSheet.create({
   page: {
     flexDirection: "column",
-    backgroundColor: "#ffffff",
-    padding: 60,
+    backgroundColor: "#f8fafc",
+    padding: 30,
     fontFamily: "Open Sans",
+    minHeight: "100%",
+    position: "relative",
   },
   container: {
     flex: 1,
-    position: "relative",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    minHeight: "100%",
+  },
+  // Decorative elements
+  decorativeCircle1: {
+    position: "absolute",
+    top: -20,
+    left: -20,
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    backgroundColor: "#dbeafe",
+    opacity: 0.3,
+  },
+  decorativeCircle2: {
+    position: "absolute",
+    bottom: -30,
+    right: -30,
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: "#dcfce7",
+    opacity: 0.3,
+  },
+  decorativeBar: {
+    position: "absolute",
+    top: "40%",
+    right: 15,
+    width: 3,
+    height: 50,
+    backgroundColor: "#3b82f6",
+    borderRadius: 2,
+    opacity: 0.2,
+  },
+  // Main content sections
+  topSection: {
+    flexDirection: "column",
   },
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    marginBottom: 60,
+    marginBottom: 10,
+    paddingTop: 8,
+    position: "relative",
+  },
+  headerAccent: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: 40,
+    height: 2,
+    backgroundColor: "#3b82f6",
+    borderRadius: 1,
   },
   brandSection: {
     flexDirection: "row",
     alignItems: "center",
   },
+  logoPlaceholder: {
+    width: 28,
+    height: 28,
+    backgroundColor: "#3b82f6",
+    borderRadius: 5,
+    marginRight: 8,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  logoText: {
+    color: "#ffffff",
+    fontSize: 12,
+    fontWeight: 700,
+  },
   logo: {
-    width: 40,
-    height: 40,
-    marginRight: 12,
+    width: 28,
+    height: 28,
+    marginRight: 8,
   },
   brandName: {
-    fontSize: 20,
-    fontWeight: 600,
-    color: "#000000",
+    fontSize: 18,
+    fontWeight: 700,
+    color: "#1f2937",
   },
   headerInfo: {
-    alignItems: "flex-end",
-    maxWidth: 200,
+    backgroundColor: "#ffffff",
+    padding: 6,
+    borderRadius: 5,
+    opacity: 0.9,
+    maxWidth: 120,
   },
   headerInfoText: {
-    fontSize: 10,
-    color: "#666666",
-    marginBottom: 2,
-    textAlign: "right",
+    fontSize: 7,
+    color: "#6b7280",
+    marginBottom: 1,
+    fontFamily: "Courier",
+  },
+  headerInfoValue: {
+    fontSize: 7,
+    color: "#111827",
+    fontWeight: 600,
+    fontFamily: "Courier",
+  },
+  // Certificate badge section
+  badgeSection: {
+    alignItems: "center",
+    marginTop: 15,
+    marginBottom: 15,
+  },
+  badge: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    backgroundColor: "#3b82f6",
+    justifyContent: "center",
+    alignItems: "center",
+    marginBottom: 8,
+  },
+  badgeInner: {
+    width: 42,
+    height: 42,
+    borderRadius: 21,
+    backgroundColor: "#ffffff",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  badgeIcon: {
+    fontSize: 14,
+    color: "#3b82f6",
   },
   certificateType: {
-    fontSize: 10,
-    color: "#666666",
+    fontSize: 9,
+    color: "#6b7280",
     letterSpacing: 1,
     textTransform: "uppercase",
-    marginBottom: 16,
+    textAlign: "center",
+    marginBottom: 8,
+    fontWeight: 500,
   },
   courseTitle: {
-    fontSize: 36,
+    fontSize: 22,
     fontWeight: 700,
-    color: "#000000",
+    color: "#1f2937",
     lineHeight: 1.1,
-    marginBottom: 20,
+    textAlign: "center",
+    marginBottom: 10,
+    maxWidth: 450,
   },
   instructorsSection: {
-    marginBottom: 40,
+    textAlign: "center",
+    marginBottom: 10,
   },
   instructorsLabel: {
-    fontSize: 12,
-    color: "#666666",
+    fontSize: 9,
+    color: "#6b7280",
+    fontWeight: 500,
   },
   instructorsText: {
-    fontSize: 12,
-    color: "#000000",
+    fontSize: 9,
+    color: "#1f2937",
+    fontWeight: 600,
+  },
+  // Recipient section
+  recipientSection: {
+    alignItems: "center",
+    marginTop: 20,
+    marginBottom: 10,
+  },
+  recipientLabel: {
+    fontSize: 10,
+    color: "#6b7280",
+    marginBottom: 8,
+    textAlign: "center",
   },
   recipientName: {
-    fontSize: 28,
-    fontWeight: 600,
-    color: "#000000",
-    marginBottom: 80,
+    fontSize: 20,
+    fontWeight: 700,
+    color: "#1f2937",
+    marginBottom: 8,
+    textAlign: "center",
   },
-  footer: {
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    right: 0,
+  recipientLine: {
+    width: 60,
+    height: 2,
+    backgroundColor: "#3b82f6",
+    borderRadius: 1,
+    marginBottom: 8,
+  },
+  recipientText: {
+    fontSize: 9,
+    color: "#6b7280",
+    textAlign: "center",
+  },
+  // Footer section
+  footerSection: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-end",
+    marginTop: 20,
+    paddingTop: 10,
   },
   footerInfo: {
     flexDirection: "column",
   },
+  footerItem: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 4,
+  },
+  footerDot: {
+    width: 3,
+    height: 3,
+    borderRadius: 2,
+    backgroundColor: "#3b82f6",
+    marginRight: 5,
+  },
   footerLabel: {
-    fontSize: 10,
-    color: "#666666",
+    fontSize: 8,
+    color: "#374151",
+    fontWeight: 500,
+    marginRight: 5,
   },
   footerValue: {
-    fontSize: 10,
-    color: "#000000",
-    marginBottom: 4,
+    fontSize: 8,
+    color: "#111827",
+    fontWeight: 600,
+  },
+  verificationSeal: {
+    alignItems: "center",
+  },
+  sealCircle: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: "#dbeafe",
+    justifyContent: "center",
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "#93c5fd",
+  },
+  sealText: {
+    fontSize: 6,
+    fontWeight: 700,
+    color: "#1d4ed8",
+  },
+  sealLabel: {
+    fontSize: 6,
+    color: "#6b7280",
+    marginTop: 2,
   },
 });
 
@@ -139,7 +306,6 @@ export const CertificatePDF: React.FC<CertificatePDFProps> = ({
   brand = "NextWork",
   logoUrl,
   certificateNo,
-  certificateUrl,
   referenceNo,
   courseTitle,
   instructors,
@@ -149,75 +315,113 @@ export const CertificatePDF: React.FC<CertificatePDFProps> = ({
 }) => (
   <Document>
     <Page size="A4" orientation="landscape" style={styles.page}>
+      {/* Decorative elements */}
+      <View style={styles.decorativeCircle1} />
+      <View style={styles.decorativeCircle2} />
+      <View style={styles.decorativeBar} />
+
       <View style={styles.container}>
-        {/* Header */}
-        <View style={styles.header}>
-          <View style={styles.brandSection}>
-            {logoUrl && (
-              // eslint-disable-next-line jsx-a11y/alt-text
-              <Image style={styles.logo} src={logoUrl} />
-            )}
-            <Text style={styles.brandName}>{brand}</Text>
-          </View>
-
-          <View style={styles.headerInfo}>
-            {certificateNo && (
-              <Text style={styles.headerInfoText}>
-                Certificate no: {certificateNo}
-              </Text>
-            )}
-            {certificateUrl && (
-              <Text style={styles.headerInfoText}>
-                Certificate url: {certificateUrl}
-              </Text>
-            )}
-            {referenceNo && (
-              <Text style={styles.headerInfoText}>
-                Reference Number: {referenceNo}
-              </Text>
-            )}
-          </View>
-        </View>
-
-        {/* Main Content */}
-        <View>
-          <Text style={styles.certificateType}>Certificate of Completion</Text>
-
-          <Text style={styles.courseTitle}>{courseTitle}</Text>
-
-          {instructors && (
-            <View style={styles.instructorsSection}>
-              <Text style={styles.instructorsLabel}>
-                Instructors{" "}
-                <Text style={styles.instructorsText}>{instructors}</Text>
-              </Text>
+        {/* Top section with header and main content */}
+        <View style={styles.topSection}>
+          {/* Header */}
+          <View style={styles.header}>
+            <View style={styles.headerAccent} />
+            <View style={styles.brandSection}>
+              {logoUrl ? (
+                // eslint-disable-next-line jsx-a11y/alt-text
+                <Image style={styles.logo} src={logoUrl} />
+              ) : (
+                <View style={styles.logoPlaceholder}>
+                  <Text style={styles.logoText}>N</Text>
+                </View>
+              )}
+              <Text style={styles.brandName}>{brand}</Text>
             </View>
-          )}
+
+            <View style={styles.headerInfo}>
+              {certificateNo && (
+                <View>
+                  <Text style={styles.headerInfoText}>ID:</Text>
+                  <Text style={styles.headerInfoValue}>{certificateNo}</Text>
+                </View>
+              )}
+              {referenceNo && (
+                <View>
+                  <Text style={styles.headerInfoText}>REF:</Text>
+                  <Text style={styles.headerInfoValue}>{referenceNo}</Text>
+                </View>
+              )}
+            </View>
+          </View>
+
+          {/* Certificate badge and title */}
+          <View style={styles.badgeSection}>
+            <View style={styles.badge}>
+              <View style={styles.badgeInner}>
+                <Text style={styles.badgeIcon}>✓</Text>
+              </View>
+            </View>
+
+            <Text style={styles.certificateType}>
+              Certificate of Achievement
+            </Text>
+
+            <Text style={styles.courseTitle}>{courseTitle}</Text>
+
+            {instructors && (
+              <View style={styles.instructorsSection}>
+                <Text style={styles.instructorsLabel}>
+                  Led by:{" "}
+                  <Text style={styles.instructorsText}>{instructors}</Text>
+                </Text>
+              </View>
+            )}
+          </View>
+
+          {/* Recipient section */}
+          <View style={styles.recipientSection}>
+            <Text style={styles.recipientLabel}>This certifies that</Text>
+            <Text style={styles.recipientName}>{recipientName}</Text>
+            <View style={styles.recipientLine} />
+            <Text style={styles.recipientText}>
+              has successfully completed the requirements
+            </Text>
+          </View>
         </View>
 
-        {/* Recipient */}
-        <Text style={styles.recipientName}>{recipientName}</Text>
-
-        {/* Footer */}
-        <View style={styles.footer}>
+        {/* Footer section */}
+        <View style={styles.footerSection}>
           <View style={styles.footerInfo}>
             {date && (
-              <View>
-                <Text style={styles.footerLabel}>Date</Text>
+              <View style={styles.footerItem}>
+                <View
+                  style={[styles.footerDot, { backgroundColor: "#3b82f6" }]}
+                />
+                <Text style={styles.footerLabel}>Completed:</Text>
                 <Text style={styles.footerValue}>{date}</Text>
               </View>
             )}
             {lengthHours && (
-              <View>
-                <Text style={styles.footerLabel}>Length</Text>
+              <View style={styles.footerItem}>
+                <View
+                  style={[styles.footerDot, { backgroundColor: "#8b5cf6" }]}
+                />
+                <Text style={styles.footerLabel}>Duration:</Text>
                 <Text style={styles.footerValue}>{lengthHours}</Text>
               </View>
             )}
+          </View>
+
+          {/* Verification seal */}
+          <View style={styles.verificationSeal}>
+            <View style={styles.sealCircle}>
+              <Text style={styles.sealText}>VERIFIED</Text>
+            </View>
+            <Text style={styles.sealLabel}>Digital Certificate</Text>
           </View>
         </View>
       </View>
     </Page>
   </Document>
 );
-
 export default CertificatePDF;

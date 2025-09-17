@@ -168,10 +168,10 @@ export default function CertificatePage() {
       </div>
 
       {/* Certificate Display */}
-      <div className="py-12 px-4">
-        <div className="mx-auto max-w-7xl">
-          <div className="bg-white shadow-lg rounded-xl p-6 lg:p-8">
-            <div className="transform scale-95 sm:scale-100 lg:scale-105 xl:scale-110 origin-center transition-transform duration-300">
+      <div className="py-8 px-4">
+        <div className="mx-auto max-w-6xl">
+          <div className="bg-white shadow-lg rounded-xl p-4 lg:p-6">
+            <div className="w-full max-w-full overflow-hidden">
               <CertificateTemplate
                 brand="NextWork"
                 logoUrl="/vercel.svg"
