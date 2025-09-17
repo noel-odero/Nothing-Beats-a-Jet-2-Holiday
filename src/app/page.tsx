@@ -314,126 +314,126 @@ function FAQAccordion({ language }: { language: "en" | "rw" }) {
 const reviewsData = {
   en: [
     {
-      id: 'r1',
-      author: 'Jenemarie Uwimana',
-      role: 'Student, Hospitality',
+      id: "r1",
+      author: "Jenemarie Uwimana",
+      role: "Student, Hospitality",
       avatar:
-        'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'NextWork helped me discover hospitality as a career path. I never knew TVET could lead to such great opportunities. Now I have a clear direction!',
+        "NextWork helped me discover hospitality as a career path. I never knew TVET could lead to such great opportunities. Now I have a clear direction!",
     },
     {
-      id: 'r2',
-      author: 'Jean Claude Nzeyimana',
-      role: 'Electrical Engineering Student',
+      id: "r2",
+      author: "Jean Claude Nzeyimana",
+      role: "Electrical Engineering Student",
       avatar:
-        'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'The gamified learning approach kept me engaged throughout my studies. The digital badges motivated me to complete all modules.',
+        "The gamified learning approach kept me engaged throughout my studies. The digital badges motivated me to complete all modules.",
     },
     {
-      id: 'r3',
-      author: 'Marie Rose Mukamana',
-      role: 'Fashion Design Graduate',
+      id: "r3",
+      author: "Marie Rose Mukamana",
+      role: "Fashion Design Graduate",
       avatar:
-        'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'NextWork connected me with the right institution and now I run my own fashion business earning RWF 380,000 monthly.',
+        "NextWork connected me with the right institution and now I run my own fashion business earning RWF 380,000 monthly.",
     },
     {
-      id: 'r4',
-      author: 'Eric Ndayambaje',
-      role: 'Construction Supervisor',
+      id: "r4",
+      author: "Eric Ndayambaje",
+      role: "Construction Supervisor",
       avatar:
-        'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'From a TVET student to construction supervisor earning RWF 520,000. NextWork showed me the career progression path.',
+        "From a TVET student to construction supervisor earning RWF 520,000. NextWork showed me the career progression path.",
     },
     {
-      id: 'r5',
-      author: 'Grace Umutoni',
-      role: 'Automotive Technician',
+      id: "r5",
+      author: "Grace Umutoni",
+      role: "Automotive Technician",
       avatar:
-        'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'The platform helped me build skills that employers actually want. I got hired before graduation and love working on cars.',
+        "The platform helped me build skills that employers actually want. I got hired before graduation and love working on cars.",
     },
     {
-      id: 'r6',
-      author: 'Aline Uwamariya',
-      role: 'Fashion Design Student',
+      id: "r6",
+      author: "Aline Uwamariya",
+      role: "Fashion Design Student",
       avatar:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 4,
       content:
-        'NextWork made learning interactive and fun. The success stories inspired me to pursue fashion design confidently.',
+        "NextWork made learning interactive and fun. The success stories inspired me to pursue fashion design confidently.",
     },
   ],
   rw: [
     {
-      id: 'r1',
-      author: 'Jenemarie Uwimana',
-      role: 'Umunyeshuri, Ubushake',
+      id: "r1",
+      author: "Jenemarie Uwimana",
+      role: "Umunyeshuri, Ubushake",
       avatar:
-        'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'NextWork yamfashe kumenya ubushake nk\'inzira y\'umwuga. Ntinarigeze nzi ko TVET ishobora kugeza ku mahirwe meza. Ubu mfite icyerekezo gikomeye!',
+        "NextWork yamfashe kumenya ubushake nk'inzira y'umwuga. Ntinarigeze nzi ko TVET ishobora kugeza ku mahirwe meza. Ubu mfite icyerekezo gikomeye!",
     },
     {
-      id: 'r2',
-      author: 'Jean Claude Nzeyimana',
-      role: 'Umunyeshuri w\'Ubuhanga bw\'Amashanyarazi',
+      id: "r2",
+      author: "Jean Claude Nzeyimana",
+      role: "Umunyeshuri w'Ubuhanga bw'Amashanyarazi",
       avatar:
-        'https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'Uburyo bw\'imikino bwo kwiga bwamfashe gukomerwa mu masomo yanjye. Ibimenyetso bya digitale byambyutije gurangiza ibice byose.',
+        "Uburyo bw'imikino bwo kwiga bwamfashe gukomerwa mu masomo yanjye. Ibimenyetso bya digitale byambyutije gurangiza ibice byose.",
     },
     {
-      id: 'r3',
-      author: 'Marie Rose Mukamana',
-      role: 'Uwarangije Imyambarire',
+      id: "r3",
+      author: "Marie Rose Mukamana",
+      role: "Uwarangije Imyambarire",
       avatar:
-        'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'NextWork yamfashe guhura n\'ikigo cyiza ubu nkora ubucuruzi bwanjye bw\'imyambarire ngira amafaranga 380,000 RWF ukwezi.',
+        "NextWork yamfashe guhura n'ikigo cyiza ubu nkora ubucuruzi bwanjye bw'imyambarire ngira amafaranga 380,000 RWF ukwezi.",
     },
     {
-      id: 'r4',
-      author: 'Eric Ndayambaje',
-      role: 'Umugenzuzi w\'Ubwubatsi',
+      id: "r4",
+      author: "Eric Ndayambaje",
+      role: "Umugenzuzi w'Ubwubatsi",
       avatar:
-        'https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'Kuva muri umunyeshuri wa TVET kugeza umugenzuzi w\'ubwubatsi ngira 520,000 RWF. NextWork yanerekeje inzira y\'iterambere.',
+        "Kuva muri umunyeshuri wa TVET kugeza umugenzuzi w'ubwubatsi ngira 520,000 RWF. NextWork yanerekeje inzira y'iterambere.",
     },
     {
-      id: 'r5',
-      author: 'Grace Umutoni',
-      role: 'Umuhanga w\'Ibinyamakuru',
+      id: "r5",
+      author: "Grace Umutoni",
+      role: "Umuhanga w'Ibinyamakuru",
       avatar:
-        'https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 5,
       content:
-        'Urubuga rwamfashe kubaka ubuhanga abacuruzi basaba rwose. Nabonetse akazi mbere yo kurangiza kandi nkunda gukora ku modoka.',
+        "Urubuga rwamfashe kubaka ubuhanga abacuruzi basaba rwose. Nabonetse akazi mbere yo kurangiza kandi nkunda gukora ku modoka.",
     },
     {
-      id: 'r6',
-      author: 'Aline Uwamariya',
-      role: 'Umunyeshuri w\'Imyambarire',
+      id: "r6",
+      author: "Aline Uwamariya",
+      role: "Umunyeshuri w'Imyambarire",
       avatar:
-        'https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80',
+        "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=160&h=160&q=80",
       rating: 4,
       content:
-        'NextWork yahinduye kwiga gushimishije kandi bishoboka. Inkuru z\'intsinzi zanyibutije gukurikira imyambarire ntinyanga.',
+        "NextWork yahinduye kwiga gushimishije kandi bishoboka. Inkuru z'intsinzi zanyibutije gukurikira imyambarire ntinyanga.",
     },
   ],
 };
