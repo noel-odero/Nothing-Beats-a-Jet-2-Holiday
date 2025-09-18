@@ -1,65 +1,32 @@
-import RoadmapPreview, { type RoadmapData } from '@/components/RoadmapPreview';
+import { LearningPath } from '@/app/(tvt-student)/_components/learning/learning-path';
+import { LearningStats } from '@/app/(tvt-student)/_components/learning/learning-stats';
 
-const sampleRoadmap: RoadmapData = {
-  title: 'Electrical Engineering TVET Pathway',
-  description:
-    'Explore hands-on modules to become an in-demand electrical technician and engineer in Rwanda. Build core skills and get job-ready.',
-  modules: [
-    {
-      name: 'Safety & Tools',
-      description: 'Electrical safety, PPE, measurement tools.',
-    },
-    {
-      name: 'Basic Circuits',
-      description: 'Ohm’s law, series/parallel, breadboarding.',
-    },
-    {
-      name: 'Wiring & Installations',
-      description: 'Residential wiring, conduits, panels.',
-    },
-    {
-      name: 'Machinery & Motors',
-      description: 'AC/DC motors, starters, maintenance.',
-    },
-    {
-      name: 'Solar & Renewables',
-      description: 'PV systems, inverters, battery banks.',
-    },
-    {
-      name: 'Diagnostics',
-      description: 'Troubleshooting, multimeters, fault isolation.',
-    },
-  ],
-  salaries: [
-    { level: 'entry', range: 'RWF 250k - 400k / mo' },
-    { level: 'mid', range: 'RWF 400k - 700k / mo' },
-    { level: 'senior', range: 'RWF 700k - 1.2M / mo' },
-  ],
-  companies: [
-    { name: 'REG' },
-    { name: 'MTN Rwanda' },
-    { name: 'BK Tech House' },
-    { name: 'Andela' },
-    { name: 'BBOXX' },
-    { name: 'Jibu' },
-    { name: 'Irembo' },
-    { name: 'Habona' },
-  ],
-};
-
-export default function PreviewPage() {
+export default function LearningPage() {
   return (
-    <div className="font-sans w-full bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] min-h-screen text-white">
-      <div className="container-responsive py-8">
-        <div className="mb-6">
-          <h1 className="text-2xl sm:text-3xl font-bold">Preview Roadmap</h1>
-          <p className="text-white/70 text-sm sm:text-base mt-1">
-            A quick look at a TVET pathway with modules, salaries, and hiring
-            companies.
-          </p>
-        </div>
+    <div className="px-32 py-10 font-sans w-full min-h-screen bg-gradient-to-b from-white via-white to-[#f2f4f7]">
+      <div className="space-y-8">
+        {/* Header Section */}
+        <section className="mb-8">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
+            <div>
+              <h1 className="text-2xl font-bold mb-1 text-foreground">
+                Learning Path
+              </h1>
+              <p className="text-muted-foreground">
+                Master welding skills through interactive lessons
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <RoadmapPreview roadmapData={sampleRoadmap} />
+        <section className="flex flex-col md:flex-row mb-8">
+          <div className="flex-3">
+            <LearningPath />
+          </div>
+          <div className="flex-1">
+            <LearningStats />
+          </div>
+        </section>
       </div>
     </div>
   );
