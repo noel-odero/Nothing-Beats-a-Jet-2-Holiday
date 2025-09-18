@@ -1,13 +1,22 @@
-"use client";
-import { XIcon } from "lucide-react";
-import React, { useState, useRef, useEffect } from "react";
+'use client';
+import { XIcon } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<
-    { sender: "user" | "bot"; text: string }[]
-  >([]);
-  const [input, setInput] = useState("");
+    { sender: 'user' | 'bot'; text: string }[]
+  >([
+    {
+      sender: 'user',
+      text: 'Here is my progress report, it has been a bit slow, I have been busy with other things',
+    },
+    {
+      sender: 'bot',
+      text: 'Your message sounds a little bit vague, Instead of saying it is okay, give specific progress',
+    },
+  ]);
+  const [input, setInput] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -16,14 +25,11 @@ export default function Chatbot() {
 
   const handleSend = () => {
     if (!input.trim()) return;
-    setMessages((msgs) => [...msgs, { sender: "user", text: input }]);
+    setMessages((msgs) => [...msgs, { sender: 'user', text: input }]);
     setTimeout(() => {
-      setMessages((msgs) => [
-        ...msgs,
-        { sender: "bot", text: "I'm a bot! How can I help you?" },
-      ]);
+      setMessages((msgs) => [...msgs]);
     }, 600);
-    setInput("");
+    setInput('');
   };
 
   return (
@@ -77,14 +83,14 @@ export default function Chatbot() {
               <div
                 key={i}
                 className={`flex ${
-                  msg.sender === "user" ? "justify-end" : "justify-start"
+                  msg.sender === 'user' ? 'justify-end' : 'justify-start'
                 }`}
               >
                 <div
                   className={`px-3 py-2 rounded-md text-sm max-w-[70%] ${
-                    msg.sender === "user"
-                      ? "bg-white/80 text-[var(--brand-primary)]"
-                      : "bg-gray-700 text-white"
+                    msg.sender === 'user'
+                      ? 'bg-white/80 text-[var(--brand-primary)]'
+                      : 'bg-gray-700 text-white'
                   }`}
                 >
                   {msg.text}
@@ -105,7 +111,7 @@ export default function Chatbot() {
               placeholder="Type your message..."
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => e.key === "Enter" && handleSend()}
+              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
             />
             <button
               type="submit"
