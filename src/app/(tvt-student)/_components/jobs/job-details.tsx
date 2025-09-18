@@ -1,21 +1,21 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/app/(tvt-student)/_components/ui/card";
-import { Button } from "@/app/(tvt-student)/_components/ui/button";
-import { Badge } from "@/app/(tvt-student)/_components/ui/badge";
+} from '@/app/(tvt-student)/_components/ui/card';
+import { Button } from '@/app/(tvt-student)/_components/ui/button';
+import { Badge } from '@/app/(tvt-student)/_components/ui/badge';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/app/(tvt-student)/_components/ui/avatar";
-import { Separator } from "@/app/(tvt-student)/_components/ui/separator";
-import { Progress } from "@/app/(tvt-student)/_components/ui/progress";
+} from '@/app/(tvt-student)/_components/ui/avatar';
+import { Separator } from '@/app/(tvt-student)/_components/ui/separator';
+import { Progress } from '@/app/(tvt-student)/_components/ui/progress';
 import {
   ArrowLeft,
   MapPin,
@@ -28,66 +28,66 @@ import {
   CheckCircle,
   AlertCircle,
   FileText,
-} from "lucide-react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+} from 'lucide-react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 interface JobDetailsProps {
   jobId: string;
 }
 
 const jobData = {
-  "1": {
-    id: "1",
-    title: "Junior Welder",
-    company: "SteelCorp Manufacturing",
-    location: "Industrial District, City",
-    type: "Full Time",
-    salary: "$45,000 - $55,000",
-    postedDate: "2 days ago",
+  '1': {
+    id: '1',
+    title: 'Junior Welder',
+    company: 'SteelCorp Manufacturing',
+    location: 'Industrial District, City',
+    type: 'Full Time',
+    salary: '$45,000 - $55,000',
+    postedDate: '2 days ago',
     description:
       "Join our team as a Junior Welder. Perfect opportunity for recent TVET graduates to apply their welding skills in a professional environment. You'll work on various projects including structural welding, fabrication, and repair work.",
     requirements: [
-      "TVET certification in Welding Technology",
-      "Proficiency in Arc Welding techniques",
-      "Knowledge of safety protocols and procedures",
-      "Ability to read and interpret blueprints",
-      "Physical stamina and attention to detail",
-      "Willingness to work in industrial environments",
+      'TVET certification in Welding Technology',
+      'Proficiency in Arc Welding techniques',
+      'Knowledge of safety protocols and procedures',
+      'Ability to read and interpret blueprints',
+      'Physical stamina and attention to detail',
+      'Willingness to work in industrial environments',
     ],
     responsibilities: [
-      "Perform arc welding on various metal components",
-      "Follow safety protocols and maintain clean work environment",
-      "Inspect welded joints for quality and compliance",
-      "Collaborate with team members on project completion",
-      "Maintain welding equipment and tools",
-      "Document work progress and report issues",
+      'Perform arc welding on various metal components',
+      'Follow safety protocols and maintain clean work environment',
+      'Inspect welded joints for quality and compliance',
+      'Collaborate with team members on project completion',
+      'Maintain welding equipment and tools',
+      'Document work progress and report issues',
     ],
     benefits: [
-      "Competitive salary with performance bonuses",
-      "Health and dental insurance coverage",
-      "Professional development opportunities",
-      "Safety equipment and training provided",
-      "Career advancement pathways",
-      "Retirement savings plan",
+      'Competitive salary with performance bonuses',
+      'Health and dental insurance coverage',
+      'Professional development opportunities',
+      'Safety equipment and training provided',
+      'Career advancement pathways',
+      'Retirement savings plan',
     ],
     requiredSkills: [
-      "Arc Welding",
-      "Safety Protocols",
-      "Metal Preparation",
-      "Blueprint Reading",
+      'Arc Welding',
+      'Safety Protocols',
+      'Metal Preparation',
+      'Blueprint Reading',
     ],
     matchPercentage: 95,
     applicants: 12,
     isBookmarked: false,
-    companyLogo: "/company-logo-1.png",
+    companyLogo: '/company-logo-1.png',
     companyInfo: {
-      name: "SteelCorp Manufacturing",
-      size: "500-1000 employees",
-      industry: "Manufacturing",
-      founded: "1985",
+      name: 'SteelCorp Manufacturing',
+      size: '500-1000 employees',
+      industry: 'Manufacturing',
+      founded: '1985',
       description:
-        "Leading manufacturer of steel components for construction and industrial applications.",
+        'Leading manufacturer of steel components for construction and industrial applications.',
     },
   },
 };
@@ -108,9 +108,9 @@ export function JobDetails({ jobId }: JobDetailsProps) {
   }
 
   const getMatchColor = (percentage: number) => {
-    if (percentage >= 90) return "text-green-600 bg-green-50";
-    if (percentage >= 75) return "text-yellow-600 bg-yellow-50";
-    return "text-red-600 bg-red-50";
+    if (percentage >= 90) return 'text-green-600 bg-green-50';
+    if (percentage >= 75) return 'text-yellow-600 bg-yellow-50';
+    return 'text-red-600 bg-red-50';
   };
 
   const handleApply = () => {
@@ -127,7 +127,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
       {/* Header */}
       <div className="flex items-center justify-between">
         <Link href="/student/dashboard/jobs">
-          <Button className="text-white" variant="ghost" size="sm">
+          <Button variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Jobs
           </Button>
@@ -138,7 +138,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
             Save Job
           </Button>
           <Button onClick={handleApply} disabled={isApplying}>
-            {isApplying ? "Applying..." : "Apply Now"}
+            {isApplying ? 'Applying...' : 'Apply Now'}
           </Button>
         </div>
       </div>
@@ -147,19 +147,21 @@ export function JobDetails({ jobId }: JobDetailsProps) {
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
           {/* Job Header */}
-          <Card className="border border-white/10 bg-white/5">
+          <Card>
             <CardHeader>
               <div className="flex items-start gap-4">
                 <Avatar className="h-16 w-16">
-                  <AvatarImage src={job.companyLogo || "/placeholder.svg"} />
+                  <AvatarImage src={job.companyLogo || '/placeholder.svg'} />
                   <AvatarFallback>
                     {job.company.slice(0, 2).toUpperCase()}
                   </AvatarFallback>
                 </Avatar>
                 <div className="flex-1">
-                  <h1 className="text-2xl text-white font-bold">{job.title}</h1>
+                  <h1 className="text-2xl text-foreground font-bold">
+                    {job.title}
+                  </h1>
                   <p className="text-lg text-muted-foreground">{job.company}</p>
-                  <div className="flex items-center gap-4 mt-2 text-sm text-white/80">
+                  <div className="flex items-center gap-4 mt-2 text-sm text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
                       {job.location}
@@ -173,10 +175,8 @@ export function JobDetails({ jobId }: JobDetailsProps) {
                       {job.applicants} applicants
                     </div>
                   </div>
-                  <div className="flex text-white/80 items-center gap-4 mt-3">
-                    <Badge className="text-white/80" variant="outline">
-                      {job.type}
-                    </Badge>
+                  <div className="flex items-center gap-4 mt-3 text-muted-foreground">
+                    <Badge variant="secondary">{job.type}</Badge>
                     <div className="flex items-center gap-1 text-sm">
                       <DollarSign className="h-4 w-4" />
                       {job.salary}
@@ -188,12 +188,12 @@ export function JobDetails({ jobId }: JobDetailsProps) {
           </Card>
 
           {/* Job Description */}
-          <Card className="border border-white/10 bg-white/5 ">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-white">Job Description</CardTitle>
+              <CardTitle className="text-foreground">Job Description</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-white/80">
-              <p>{job.description}</p>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground">{job.description}</p>
 
               <div>
                 <h4 className="font-semibold mb-2">Key Responsibilities:</h4>
@@ -237,13 +237,15 @@ export function JobDetails({ jobId }: JobDetailsProps) {
         {/* Sidebar */}
         <div className="space-y-6">
           {/* Skills Match */}
-          <Card className="border border-white/10 bg-white/5 ">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-white text-lg">Skills Match</CardTitle>
+              <CardTitle className="text-foreground text-lg">
+                Skills Match
+              </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="text-center">
-                <div className="text-3xl text-white/80 font-bold">
+                <div className="text-3xl text-foreground font-bold">
                   {job.matchPercentage}%
                 </div>
                 <p className="text-sm text-muted-foreground">Overall Match</p>
@@ -253,7 +255,7 @@ export function JobDetails({ jobId }: JobDetailsProps) {
                 {job.requiredSkills.map((skill) => (
                   <div
                     key={skill}
-                    className="flex text-white/80 items-center justify-between text-sm"
+                    className="flex items-center justify-between text-sm text-muted-foreground"
                   >
                     <span>{skill}</span>
                     <CheckCircle className="h-4 w-4 text-primary" />
@@ -264,16 +266,16 @@ export function JobDetails({ jobId }: JobDetailsProps) {
           </Card>
 
           {/* Company Info */}
-          <Card className="border border-white/10 bg-white/5 ">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-white text-lg flex items-center gap-2">
+              <CardTitle className="text-foreground text-lg flex items-center gap-2">
                 <Building className="h-5 w-5" />
                 About Company
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div>
-                <h4 className="font-medium text-white">
+                <h4 className="font-medium text-foreground">
                   {job.companyInfo.name}
                 </h4>
                 <p className="text-sm text-muted-foreground">
@@ -283,19 +285,19 @@ export function JobDetails({ jobId }: JobDetailsProps) {
               <Separator />
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-white">Industry:</span>
+                  <span className="text-foreground">Industry:</span>
                   <span className="text-muted-foreground">
                     {job.companyInfo.industry}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white">Company Size:</span>
+                  <span className="text-foreground">Company Size:</span>
                   <span className="text-muted-foreground">
                     {job.companyInfo.size}
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-white">Founded:</span>
+                  <span className="text-foreground">Founded:</span>
                   <span className="text-muted-foreground">
                     {job.companyInfo.founded}
                   </span>
@@ -305,15 +307,15 @@ export function JobDetails({ jobId }: JobDetailsProps) {
           </Card>
 
           {/* Quick Apply */}
-          <Card className="border border-white/10 bg-white/5 ">
+          <Card>
             <CardHeader>
-              <CardTitle className="text-lg text-white flex items-center gap-2">
+              <CardTitle className="text-lg text-foreground flex items-center gap-2">
                 <FileText className="h-5 w-5" />
                 Quick Apply
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-sm text-white/50">
+              <p className="text-sm text-muted-foreground">
                 Apply with your Skills CV that includes verified badges and
                 competencies.
               </p>
@@ -324,8 +326,8 @@ export function JobDetails({ jobId }: JobDetailsProps) {
                 disabled={isApplying}
               >
                 {isApplying
-                  ? "Submitting Application..."
-                  : "Apply with Skills CV"}
+                  ? 'Submitting Application...'
+                  : 'Apply with Skills CV'}
               </Button>
               <p className="text-xs text-muted-foreground text-center">
                 Your application will include your verified skills and

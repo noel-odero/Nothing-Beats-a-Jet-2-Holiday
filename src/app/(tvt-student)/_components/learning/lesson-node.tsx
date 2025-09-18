@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { Star, Lock, CheckCircle, Play } from "lucide-react";
-import { Button } from "../ui/button";
+import { Star, Lock, CheckCircle, Play } from 'lucide-react';
+import { Button } from '../ui/button';
 
 interface LessonNodeProps {
-  status: "completed" | "current" | "locked";
-  position: "left" | "right" | "center";
+  status: 'completed' | 'current' | 'locked';
+  position: 'left' | 'right' | 'center';
   icon?: React.ReactNode;
   title?: string;
   isStart?: boolean;
   isJumpNode?: boolean;
 }
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 export function LessonNode({
   status,
@@ -26,40 +26,40 @@ export function LessonNode({
   const router = useRouter();
 
   const handleClick = () => {
-    if (status === "locked") return;
+    if (status === 'locked') return;
     if (isJumpNode) {
       // Navigate to advanced section
-      router.push("/student/dashboard/learning/advanced");
+      router.push('/student/dashboard/learning/advanced');
       return;
     }
     // Navigate to specific lesson
-    router.push(`/student/dashboard/learning/lesson/${lessonId || "intro"}`);
+    router.push(`/student/dashboard/learning/lesson/${lessonId || 'intro'}`);
   };
   const getNodeStyles = () => {
     if (isStart) {
-      return "bg-primary text-white";
+      return 'bg-primary text-white';
     }
     if (isJumpNode) {
-      return "bg-accent text-accent-foreground";
+      return 'bg-accent text-black';
     }
     switch (status) {
-      case "completed":
-        return "bg-chart-2 text-white";
-      case "current":
-        return "bg-white border-4 border-primary text-primary";
-      case "locked":
-        return "bg-muted text-muted-foreground";
+      case 'completed':
+        return 'bg-chart-2 text-white';
+      case 'current':
+        return 'bg-white border-4 border-primary text-primary';
+      case 'locked':
+        return 'bg-muted text-muted-foreground';
     }
   };
 
   const getPositionStyles = () => {
     switch (position) {
-      case "left":
-        return "-ml-20";
-      case "right":
-        return "ml-20";
+      case 'left':
+        return '-ml-20';
+      case 'right':
+        return 'ml-20';
       default:
-        return "";
+        return '';
     }
   };
 
@@ -70,10 +70,10 @@ export function LessonNode({
         <div
           onClick={handleClick}
           className={`w-[72px] h-[72px] ${getNodeStyles()} rounded-full flex items-center justify-center ${
-            status !== "locked" ? "cursor-pointer" : "cursor-not-allowed"
+            status !== 'locked' ? 'cursor-pointer' : 'cursor-not-allowed'
           } hover:bg-opacity-90 transition-colors shadow-lg`}
         >
-          {status !== "locked" ? (
+          {status !== 'locked' ? (
             icon
           ) : (
             <Lock className="text-white/80 w-8 h-8" />
@@ -82,9 +82,7 @@ export function LessonNode({
         {title && (
           <div
             className={`mt-2 text-sm ${
-              status === "locked"
-                ? "text-muted-foreground"
-                : "text-white/80 font-medium"
+              status === 'locked' ? 'text-black' : 'text-white/80 font-medium'
             }`}
           >
             {title}
@@ -96,7 +94,7 @@ export function LessonNode({
               JUMP HERE?
             </Button>
             <div className="w-[72px] h-[72px] mx-auto bg-accent rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-90 transition-colors shadow-lg">
-              <Play className="w-8 h-8 text-accent-foreground ml-1" />
+              <Play className="w-8 h-8 text-black ml-1" />
             </div>
           </>
         )}

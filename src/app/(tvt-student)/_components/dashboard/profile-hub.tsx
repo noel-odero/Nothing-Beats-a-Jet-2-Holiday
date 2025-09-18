@@ -1,26 +1,26 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/app/(tvt-student)/_components/ui/card";
+} from '@/app/(tvt-student)/_components/ui/card';
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger,
-} from "@/app/(tvt-student)/_components/ui/tabs";
-import { Badge } from "@/app/(tvt-student)/_components/ui/badge";
-import { Button } from "@/app/(tvt-student)/_components/ui/button";
-import { Progress } from "@/app/(tvt-student)/_components/ui/progress";
+} from '@/app/(tvt-student)/_components/ui/tabs';
+import { Badge } from '@/app/(tvt-student)/_components/ui/badge';
+import { Button } from '@/app/(tvt-student)/_components/ui/button';
+import { Progress } from '@/app/(tvt-student)/_components/ui/progress';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/app/(tvt-student)/_components/ui/avatar";
+} from '@/app/(tvt-student)/_components/ui/avatar';
 import {
   Award,
   Download,
@@ -29,68 +29,68 @@ import {
   CheckCircle,
   Clock,
   Users,
-} from "lucide-react";
+} from 'lucide-react';
 
 export function ProfileHub() {
-  const [activeTab, setActiveTab] = useState("credentials");
+  const [activeTab, setActiveTab] = useState('credentials');
 
   const credentials = [
     {
-      title: "Basic Welding Safety",
-      type: "Certificate",
-      date: "2024-01-15",
-      status: "completed",
+      title: 'Basic Welding Safety',
+      type: 'Certificate',
+      date: '2024-01-15',
+      status: 'completed',
       icon: CheckCircle,
     },
     {
-      title: "Arc Welding Fundamentals",
-      type: "Badge",
-      date: "2024-02-20",
-      status: "completed",
+      title: 'Arc Welding Fundamentals',
+      type: 'Badge',
+      date: '2024-02-20',
+      status: 'completed',
       icon: Award,
     },
     {
-      title: "Metal Preparation",
-      type: "Badge",
-      date: "2024-03-10",
-      status: "completed",
+      title: 'Metal Preparation',
+      type: 'Badge',
+      date: '2024-03-10',
+      status: 'completed',
       icon: Award,
     },
     {
-      title: "Advanced Techniques",
-      type: "Certificate",
-      date: "In Progress",
-      status: "in-progress",
+      title: 'Advanced Techniques',
+      type: 'Certificate',
+      date: 'In Progress',
+      status: 'in-progress',
       icon: Clock,
     },
   ];
 
   const skills = [
-    { name: "Arc Welding", level: 85, category: "Core" },
-    { name: "Safety Protocols", level: 95, category: "Essential" },
-    { name: "Metal Preparation", level: 78, category: "Core" },
-    { name: "Quality Control", level: 65, category: "Advanced" },
-    { name: "Blueprint Reading", level: 72, category: "Technical" },
-    { name: "Equipment Maintenance", level: 58, category: "Technical" },
+    { name: 'Arc Welding', level: 85, category: 'Core' },
+    { name: 'Safety Protocols', level: 95, category: 'Essential' },
+    { name: 'Metal Preparation', level: 78, category: 'Core' },
+    { name: 'Quality Control', level: 65, category: 'Advanced' },
+    { name: 'Blueprint Reading', level: 72, category: 'Technical' },
+    { name: 'Equipment Maintenance', level: 58, category: 'Technical' },
   ];
 
   const rankings = [
-    { rank: 1, name: "Sarah Johnson", score: 2450, avatar: "SJ" },
-    { rank: 2, name: "Mike Chen", score: 2380, avatar: "MC" },
-    { rank: 3, name: "Alex Rivera", score: 2320, avatar: "AR" },
+    { rank: 1, name: 'Sarah Johnson', score: 2450, avatar: 'SJ' },
+    { rank: 2, name: 'Mike Chen', score: 2380, avatar: 'MC' },
+    { rank: 3, name: 'Alex Rivera', score: 2320, avatar: 'AR' },
     {
       rank: 15,
-      name: "John Doe (You)",
+      name: 'John Doe (You)',
       score: 1890,
-      avatar: "JD",
+      avatar: 'JD',
       isCurrentUser: true,
     },
   ];
 
   return (
-    <Card className="border border-white/10 bg-white/5 ">
+    <Card>
       <CardHeader>
-        <CardTitle className="flex text-white text-sm font-medium items-center gap-2">
+        <CardTitle className="flex text-foreground text-sm font-medium items-center gap-2">
           My Skills Passport
         </CardTitle>
       </CardHeader>
@@ -113,13 +113,13 @@ export function ProfileHub() {
                   <div className="flex items-center gap-3">
                     <credential.icon
                       className={`h-5 w-5 ${
-                        credential.status === "completed"
-                          ? "text-primary"
-                          : "text-muted-foreground"
+                        credential.status === 'completed'
+                          ? 'text-primary'
+                          : 'text-muted-foreground'
                       }`}
                     />
                     <div>
-                      <p className="text-white/80 font-medium">
+                      <p className="text-foreground font-medium">
                         {credential.title}
                       </p>
                       <p className="text-sm text-muted-foreground">
@@ -129,14 +129,14 @@ export function ProfileHub() {
                   </div>
                   <Badge
                     variant={
-                      credential.status === "completed"
-                        ? "default"
-                        : "secondary"
+                      credential.status === 'completed'
+                        ? 'default'
+                        : 'secondary'
                     }
                   >
-                    {credential.status === "completed"
-                      ? "Earned"
-                      : "In Progress"}
+                    {credential.status === 'completed'
+                      ? 'Earned'
+                      : 'In Progress'}
                   </Badge>
                 </div>
               ))}
@@ -149,7 +149,9 @@ export function ProfileHub() {
                 <div key={index} className="space-y-2">
                   <div className="flex justify-between items-center">
                     <div>
-                      <p className="text-white/80 font-medium">{skill.name}</p>
+                      <p className="text-foreground font-medium">
+                        {skill.name}
+                      </p>
                       <p className="text-sm text-muted-foreground">
                         {skill.category}
                       </p>
@@ -168,7 +170,7 @@ export function ProfileHub() {
             <div className="text-center space-y-4">
               <div className="p-6 border-2 border-dashed border-border rounded-lg">
                 <QrCode className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="font-semibold mb-2 text-white">
+                <h3 className="font-semibold mb-2 text-foreground">
                   Digital Skills CV
                 </h3>
                 <p className="text-sm text-muted-foreground mb-4">
@@ -186,7 +188,7 @@ export function ProfileHub() {
                 </div>
               </div>
               <div className="text-left space-y-2">
-                <h4 className="font-medium text-white">CV Includes:</h4>
+                <h4 className="font-medium text-foreground">CV Includes:</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Verified certificates and badges</li>
                   <li>• Skills competency levels</li>
@@ -200,10 +202,10 @@ export function ProfileHub() {
           <TabsContent value="ranking" className="space-y-4">
             <div className="space-y-3">
               <div className="flex items-center justify-between">
-                <h4 className="font-medium text-white">
+                <h4 className="font-medium text-foreground">
                   Welding Technology Program
                 </h4>
-                <Badge className="text-white/80" variant="outline">
+                <Badge variant="secondary">
                   <Users className="h-3 w-3 mr-1" />
                   156 students
                 </Badge>
@@ -211,18 +213,18 @@ export function ProfileHub() {
               {rankings.map((student) => (
                 <div
                   key={student.rank}
-                  className={`flex border border-white/10 items-center justify-between p-3 rounded-lg ${
+                  className={`flex items-center justify-between p-3 rounded-lg ${
                     student.isCurrentUser
-                      ? "bg-white/20 border border-primary/20"
-                      : "bg-white/5"
+                      ? 'bg-accent/40 border border-primary/20'
+                      : 'bg-muted'
                   }`}
                 >
                   <div className="flex items-center gap-3">
                     <div
                       className={` flex items-center justify-center w-8 h-8 rounded-full text-sm font-bold ${
                         student.rank <= 3
-                          ? "bg-primary text-primary-foreground"
-                          : "bg-muted text-muted-foreground"
+                          ? 'bg-primary text-primary-foreground'
+                          : 'bg-muted text-muted-foreground'
                       }`}
                     >
                       {student.rank <= 3 ? (
@@ -236,8 +238,10 @@ export function ProfileHub() {
                     </Avatar>
                     <div>
                       <p
-                        className={`text-white/80 font-medium ${
-                          student.isCurrentUser ? "text-primary" : ""
+                        className={`font-medium ${
+                          student.isCurrentUser
+                            ? 'text-primary'
+                            : 'text-foreground'
                         }`}
                       >
                         {student.name}
@@ -248,7 +252,9 @@ export function ProfileHub() {
                     </div>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-white/80">{student.score}</p>
+                    <p className="font-medium text-foreground">
+                      {student.score}
+                    </p>
                     <p className="text-sm text-muted-foreground">XP</p>
                   </div>
                 </div>
