@@ -1,10 +1,9 @@
-import { DashboardLayout } from '@/app/(tvt-student)/_components/dashboard/dashboard-layout';
 import { LearningPath } from '@/app/(tvt-student)/_components/learning/learning-path';
 import { LearningStats } from '@/app/(tvt-student)/_components/learning/learning-stats';
 
 export default function LearningPage() {
   return (
-    <DashboardLayout>
+    <div className="px-32 py-10 font-sans w-full min-h-screen bg-gradient-to-b from-white via-white to-[#f2f4f7]">
       <div className="space-y-8">
         {/* Header Section */}
         <section className="mb-8">
@@ -29,6 +28,6 @@ export default function LearningPage() {
           </div>
         </section>
       </div>
-    </DashboardLayout>
+    </div>
   );
 }

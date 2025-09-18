@@ -3,64 +3,64 @@ import {
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/app/(tvt-student)/_components/ui/card";
-import { Badge } from "@/app/(tvt-student)/_components/ui/badge";
-import { BookOpen, Award, Users, TrendingUp, Clock } from "lucide-react";
+} from '@/app/(tvt-student)/_components/ui/card';
+import { Badge } from '@/app/(tvt-student)/_components/ui/badge';
+import { BookOpen, Award, Users, TrendingUp, Clock } from 'lucide-react';
 
 export function RecentActivity() {
   const activities = [
     {
-      type: "achievement",
-      title: "Earned Metal Preparation Badge",
-      time: "2 hours ago",
+      type: 'achievement',
+      title: 'Earned Metal Preparation Badge',
+      time: '2 hours ago',
       icon: Award,
-      color: "text-primary",
+      color: 'text-primary',
     },
     {
-      type: "learning",
-      title: "Completed Arc Welding Module 3",
-      time: "1 day ago",
+      type: 'learning',
+      title: 'Completed Arc Welding Module 3',
+      time: '1 day ago',
       icon: BookOpen,
-      color: "text-chart-2",
+      color: 'text-chart-2',
     },
     {
-      type: "ranking",
-      title: "Moved up 3 positions in ranking",
-      time: "2 days ago",
+      type: 'ranking',
+      title: 'Moved up 3 positions in ranking',
+      time: '2 days ago',
       icon: TrendingUp,
-      color: "text-chart-4",
+      color: 'text-chart-4',
     },
     {
-      type: "social",
-      title: "New student joined your program",
-      time: "3 days ago",
+      type: 'social',
+      title: 'New student joined your program',
+      time: '3 days ago',
       icon: Users,
-      color: "text-muted-foreground",
+      color: 'text-muted-foreground',
     },
     {
-      type: "reminder",
-      title: "Assignment due tomorrow",
-      time: "1 week ago",
+      type: 'reminder',
+      title: 'Assignment due tomorrow',
+      time: '1 week ago',
       icon: Clock,
-      color: "text-destructive",
+      color: 'text-destructive',
     },
   ];
 
   const upcomingEvents = [
     {
-      title: "Practical Welding Assessment",
-      date: "Tomorrow, 9:00 AM",
-      type: "Assessment",
+      title: 'Practical Welding Assessment',
+      date: 'Tomorrow, 9:00 AM',
+      type: 'Assessment',
     },
     {
-      title: "Safety Workshop",
-      date: "Friday, 2:00 PM",
-      type: "Workshop",
+      title: 'Safety Workshop',
+      date: 'Friday, 2:00 PM',
+      type: 'Workshop',
     },
     {
-      title: "Industry Visit - Local Factory",
-      date: "Next Monday",
-      type: "Field Trip",
+      title: 'Industry Visit - Local Factory',
+      date: 'Next Monday',
+      type: 'Field Trip',
     },
   ];
 
@@ -96,12 +96,12 @@ export function RecentActivity() {
               className="flex items-center justify-between p-3 border rounded-lg"
             >
               <div>
-                <p className="text-white/80 font-medium text-sm">
+                <p className="font-medium text-sm text-foreground">
                   {event.title}
                 </p>
                 <p className="text-xs text-muted-foreground">{event.date}</p>
               </div>
-              <Badge variant="outline" className="text-xs text-white/80">
+              <Badge variant="outline" className="text-xs">
                 {event.type}
               </Badge>
             </div>

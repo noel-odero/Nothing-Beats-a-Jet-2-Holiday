@@ -1,24 +1,24 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Card, CardContent } from "@/app/(tvt-student)/_components/ui/card";
-import { Input } from "@/app/(tvt-student)/_components/ui/input";
-import { Button } from "@/app/(tvt-student)/_components/ui/button";
+import { useState } from 'react';
+import { Card, CardContent } from '@/app/(tvt-student)/_components/ui/card';
+import { Input } from '@/app/(tvt-student)/_components/ui/input';
+import { Button } from '@/app/(tvt-student)/_components/ui/button';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/app/(tvt-student)/_components/ui/select";
-import { Badge } from "@/app/(tvt-student)/_components/ui/badge";
-import { Search, MapPin, Filter, X } from "lucide-react";
+} from '@/app/(tvt-student)/_components/ui/select';
+import { Badge } from '@/app/(tvt-student)/_components/ui/badge';
+import { Search, MapPin, Filter, X } from 'lucide-react';
 
 export function JobSearch() {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [location, setLocation] = useState("");
-  const [jobType, setJobType] = useState("");
-  const [skillFilter, setSkillFilter] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+  const [location, setLocation] = useState('');
+  const [jobType, setJobType] = useState('');
+  const [skillFilter, setSkillFilter] = useState('');
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
   const handleAddFilter = (filter: string) => {
@@ -32,10 +32,10 @@ export function JobSearch() {
   };
 
   const suggestedSkills = [
-    "Arc Welding",
-    "Safety Protocols",
-    "Metal Preparation",
-    "Quality Control",
+    'Arc Welding',
+    'Safety Protocols',
+    'Metal Preparation',
+    'Quality Control',
   ];
 
   return (
@@ -48,7 +48,7 @@ export function JobSearch() {
               placeholder="Search jobs..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 text-white"
+              className="pl-10"
             />
           </div>
 
@@ -58,15 +58,15 @@ export function JobSearch() {
               placeholder="Location"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
-              className="pl-10 text-white"
+              className="pl-10"
             />
           </div>
 
           <Select value={jobType} onValueChange={setJobType}>
             <SelectTrigger>
-              <SelectValue className="text-white" placeholder="Job Type" />
+              <SelectValue placeholder="Job Type" />
             </SelectTrigger>
-            <SelectContent style={{ color: "white" }} className="text-white">
+            <SelectContent>
               <SelectItem value="full-time">Full Time</SelectItem>
               <SelectItem value="part-time">Part Time</SelectItem>
               <SelectItem value="internship">Internship</SelectItem>
@@ -77,14 +77,11 @@ export function JobSearch() {
 
           <Select value={skillFilter} onValueChange={setSkillFilter}>
             <SelectTrigger>
-              <SelectValue
-                className="text-white"
-                placeholder="Required Skills"
-              />
+              <SelectValue placeholder="Required Skills" />
             </SelectTrigger>
-            <SelectContent className="text-white">
+            <SelectContent>
               {suggestedSkills.map((skill) => (
-                <SelectItem className="text-white" key={skill} value={skill}>
+                <SelectItem key={skill} value={skill}>
                   {skill}
                 </SelectItem>
               ))}
@@ -118,7 +115,7 @@ export function JobSearch() {
               <Filter className="h-4 w-4 mr-2" />
               More Filters
             </Button> */}
-            <Button variant={"secondary"} size="sm">
+            <Button variant={'secondary'} size="sm">
               Search Jobs
             </Button>
           </div>

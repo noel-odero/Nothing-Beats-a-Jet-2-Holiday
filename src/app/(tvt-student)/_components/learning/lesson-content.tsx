@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "@/app/(tvt-student)/_components/ui/card";
-import { Button } from "@/app/(tvt-student)/_components/ui/button";
-import { Progress } from "@/app/(tvt-student)/_components/ui/progress";
-import { Badge } from "@/app/(tvt-student)/_components/ui/badge";
+} from '@/app/(tvt-student)/_components/ui/card';
+import { Button } from '@/app/(tvt-student)/_components/ui/button';
+import { Progress } from '@/app/(tvt-student)/_components/ui/progress';
+import { Badge } from '@/app/(tvt-student)/_components/ui/badge';
 import {
   ArrowLeft,
   ArrowRight,
@@ -17,9 +17,9 @@ import {
   X,
   Star,
   Award,
-} from "lucide-react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
+} from 'lucide-react';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 interface LessonContentProps {
   lessonId: string;
@@ -27,7 +27,7 @@ interface LessonContentProps {
 
 interface Question {
   id: string;
-  type: "multiple-choice" | "drag-drop" | "true-false" | "fill-blank";
+  type: 'multiple-choice' | 'drag-drop' | 'true-false' | 'fill-blank';
   question: string;
   options?: string[];
   correctAnswer: string | string[];
@@ -36,161 +36,161 @@ interface Question {
 }
 
 const lessonData = {
-  "1": {
-    title: "Intro to Welding",
+  '1': {
+    title: 'Intro to Welding',
     description:
-      "Get an overview of welding, its applications, and basic concepts.",
+      'Get an overview of welding, its applications, and basic concepts.',
     totalSteps: 3,
     xpReward: 40,
     questions: [
       {
-        id: "1",
-        type: "multiple-choice" as const,
-        question: "What is welding?",
+        id: '1',
+        type: 'multiple-choice' as const,
+        question: 'What is welding?',
         options: [
-          "A process of joining materials by melting them together",
-          "A method of painting metal surfaces",
-          "A way to cut metal using a torch",
-          "A technique for measuring metal thickness",
+          'A process of joining materials by melting them together',
+          'A method of painting metal surfaces',
+          'A way to cut metal using a torch',
+          'A technique for measuring metal thickness',
         ],
         correctAnswer:
-          "A process of joining materials by melting them together",
+          'A process of joining materials by melting them together',
         explanation:
-          "Welding involves melting and fusing materials, usually metals, to join them.",
+          'Welding involves melting and fusing materials, usually metals, to join them.',
         points: 10,
       },
       {
-        id: "2",
-        type: "true-false" as const,
-        question: "Welding is only used for joining metals.",
-        correctAnswer: "false",
+        id: '2',
+        type: 'true-false' as const,
+        question: 'Welding is only used for joining metals.',
+        correctAnswer: 'false',
         explanation:
-          "While welding is most common with metals, it can also be used for plastics and other materials.",
+          'While welding is most common with metals, it can also be used for plastics and other materials.',
         points: 10,
       },
       {
-        id: "3",
-        type: "multiple-choice" as const,
-        question: "Which of the following is NOT a common welding process?",
+        id: '3',
+        type: 'multiple-choice' as const,
+        question: 'Which of the following is NOT a common welding process?',
         options: [
-          "MIG welding",
-          "TIG welding",
-          "Arc welding",
-          "Sewing welding",
+          'MIG welding',
+          'TIG welding',
+          'Arc welding',
+          'Sewing welding',
         ],
-        correctAnswer: "Sewing welding",
-        explanation: "Sewing welding is not a recognized welding process.",
+        correctAnswer: 'Sewing welding',
+        explanation: 'Sewing welding is not a recognized welding process.',
         points: 20,
       },
     ],
   },
-  "2": {
-    title: "Safety Basics",
+  '2': {
+    title: 'Safety Basics',
     description:
-      "Understand essential safety practices and equipment for welding.",
+      'Understand essential safety practices and equipment for welding.',
     totalSteps: 4,
     xpReward: 60,
     questions: [
       {
-        id: "1",
-        type: "multiple-choice" as const,
-        question: "Which item is essential for eye protection during welding?",
-        options: ["Safety glasses", "Welding helmet", "Face mask", "Ear plugs"],
-        correctAnswer: "Welding helmet",
+        id: '1',
+        type: 'multiple-choice' as const,
+        question: 'Which item is essential for eye protection during welding?',
+        options: ['Safety glasses', 'Welding helmet', 'Face mask', 'Ear plugs'],
+        correctAnswer: 'Welding helmet',
         explanation:
-          "A welding helmet protects your eyes and face from sparks and harmful light.",
+          'A welding helmet protects your eyes and face from sparks and harmful light.',
         points: 15,
       },
       {
-        id: "2",
-        type: "true-false" as const,
-        question: "Wearing gloves is optional when welding.",
-        correctAnswer: "false",
+        id: '2',
+        type: 'true-false' as const,
+        question: 'Wearing gloves is optional when welding.',
+        correctAnswer: 'false',
         explanation:
-          "Gloves are necessary to protect your hands from burns and electric shock.",
+          'Gloves are necessary to protect your hands from burns and electric shock.',
         points: 10,
       },
       {
-        id: "3",
-        type: "multiple-choice" as const,
-        question: "What should you do before starting any welding work?",
+        id: '3',
+        type: 'multiple-choice' as const,
+        question: 'What should you do before starting any welding work?',
         options: [
-          "Check equipment for damage",
-          "Remove all safety signs",
-          "Wear sandals",
-          "Ignore ventilation",
+          'Check equipment for damage',
+          'Remove all safety signs',
+          'Wear sandals',
+          'Ignore ventilation',
         ],
-        correctAnswer: "Check equipment for damage",
+        correctAnswer: 'Check equipment for damage',
         explanation:
-          "Inspecting equipment ensures safety and prevents accidents.",
+          'Inspecting equipment ensures safety and prevents accidents.',
         points: 15,
       },
       {
-        id: "4",
-        type: "multiple-choice" as const,
-        question: "Why is proper ventilation important in welding areas?",
+        id: '4',
+        type: 'multiple-choice' as const,
+        question: 'Why is proper ventilation important in welding areas?',
         options: [
-          "To keep the area cool",
-          "To remove harmful fumes",
-          "To reduce noise",
-          "To improve lighting",
+          'To keep the area cool',
+          'To remove harmful fumes',
+          'To reduce noise',
+          'To improve lighting',
         ],
-        correctAnswer: "To remove harmful fumes",
+        correctAnswer: 'To remove harmful fumes',
         explanation:
-          "Welding produces fumes that can be hazardous if not properly ventilated.",
+          'Welding produces fumes that can be hazardous if not properly ventilated.',
         points: 20,
       },
     ],
   },
-  "4": {
-    title: "Metal Preparation",
+  '4': {
+    title: 'Metal Preparation',
     description:
-      "Learn proper metal preparation techniques for quality welding",
+      'Learn proper metal preparation techniques for quality welding',
     totalSteps: 5,
     xpReward: 80,
     questions: [
       {
-        id: "1",
-        type: "multiple-choice" as const,
-        question: "What is the first step in metal preparation for welding?",
+        id: '1',
+        type: 'multiple-choice' as const,
+        question: 'What is the first step in metal preparation for welding?',
         options: [
-          "Apply flux",
-          "Clean the surface",
-          "Heat the metal",
-          "Apply primer",
+          'Apply flux',
+          'Clean the surface',
+          'Heat the metal',
+          'Apply primer',
         ],
-        correctAnswer: "Clean the surface",
+        correctAnswer: 'Clean the surface',
         explanation:
-          "Cleaning the surface removes dirt, oil, and oxidation that can cause weld defects.",
+          'Cleaning the surface removes dirt, oil, and oxidation that can cause weld defects.',
         points: 20,
       },
       {
-        id: "2",
-        type: "true-false" as const,
-        question: "Rust should always be completely removed before welding.",
-        correctAnswer: "true",
+        id: '2',
+        type: 'true-false' as const,
+        question: 'Rust should always be completely removed before welding.',
+        correctAnswer: 'true',
         explanation:
-          "Rust can cause porosity and weak welds, so it must be removed completely.",
+          'Rust can cause porosity and weak welds, so it must be removed completely.',
         points: 15,
       },
       {
-        id: "3",
-        type: "drag-drop" as const,
-        question: "Arrange these metal preparation steps in the correct order:",
+        id: '3',
+        type: 'drag-drop' as const,
+        question: 'Arrange these metal preparation steps in the correct order:',
         options: [
-          "Apply primer",
-          "Clean surface",
-          "Remove rust",
-          "Inspect for defects",
+          'Apply primer',
+          'Clean surface',
+          'Remove rust',
+          'Inspect for defects',
         ],
         correctAnswer: [
-          "Clean surface",
-          "Remove rust",
-          "Inspect for defects",
-          "Apply primer",
+          'Clean surface',
+          'Remove rust',
+          'Inspect for defects',
+          'Apply primer',
         ],
         explanation:
-          "This sequence ensures proper preparation from cleaning to final coating.",
+          'This sequence ensures proper preparation from cleaning to final coating.',
         points: 25,
       },
     ],
@@ -224,10 +224,10 @@ export function LessonContent({ lessonId }: LessonContentProps) {
   };
 
   const handleSubmit = () => {
-    if (!selectedAnswer && currentQuestion.type !== "drag-drop") return;
+    if (!selectedAnswer && currentQuestion.type !== 'drag-drop') return;
 
     const isCorrect =
-      currentQuestion.type === "drag-drop"
+      currentQuestion.type === 'drag-drop'
         ? JSON.stringify(dragItems) ===
           JSON.stringify(currentQuestion.correctAnswer)
         : selectedAnswer === currentQuestion.correctAnswer;
@@ -247,19 +247,19 @@ export function LessonContent({ lessonId }: LessonContentProps) {
       setDragItems([]);
     } else {
       // Lesson completed
-      console.log("Lesson completed with score:", score);
+      console.log('Lesson completed with score:', score);
     }
   };
 
   const renderQuestion = () => {
     switch (currentQuestion.type) {
-      case "multiple-choice":
+      case 'multiple-choice':
         return (
           <div className="space-y-3">
             {currentQuestion.options?.map((option) => (
               <Button
                 key={option}
-                variant={selectedAnswer === option ? "default" : "outline"}
+                variant={selectedAnswer === option ? 'default' : 'outline'}
                 className="w-full justify-start text-left h-auto p-4"
                 onClick={() => handleAnswer(option)}
                 disabled={showResult}
@@ -270,21 +270,21 @@ export function LessonContent({ lessonId }: LessonContentProps) {
           </div>
         );
 
-      case "true-false":
+      case 'true-false':
         return (
           <div className="flex gap-4">
             <Button
-              variant={selectedAnswer === "true" ? "default" : "outline"}
+              variant={selectedAnswer === 'true' ? 'default' : 'outline'}
               className="flex-1"
-              onClick={() => handleAnswer("true")}
+              onClick={() => handleAnswer('true')}
               disabled={showResult}
             >
               True
             </Button>
             <Button
-              variant={selectedAnswer === "false" ? "default" : "outline"}
+              variant={selectedAnswer === 'false' ? 'default' : 'outline'}
               className="flex-1"
-              onClick={() => handleAnswer("false")}
+              onClick={() => handleAnswer('false')}
               disabled={showResult}
             >
               False
@@ -292,7 +292,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
           </div>
         );
 
-      case "drag-drop":
+      case 'drag-drop':
         return (
           <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
@@ -351,7 +351,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
       {/* Header */}
       <div className="flex items-center justify-between">
         <Link href="/student/dashboard/learning">
-          <Button className="text-white" variant="ghost" size="sm">
+          <Button variant="ghost" size="sm">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Learning Path
           </Button>
@@ -359,23 +359,25 @@ export function LessonContent({ lessonId }: LessonContentProps) {
       </div>
 
       {/* Progress */}
-      <Card className="border border-white/10 bg-white/5">
+      <Card>
         <CardContent className="p-4">
           <div className="flex items-center justify-between mb-2">
-            <h1 className="text-white text-2xl font-bold">{lesson.title}</h1>
+            <h1 className="text-2xl font-bold text-foreground">
+              {lesson.title}
+            </h1>
             <span className="text-sm text-muted-foreground">
               {Math.round(progress)}% complete
             </span>
           </div>
           <Progress value={progress} className="mb-2" />
-          <p className="text-white/80">{lesson.description}</p>
+          <p className="text-muted-foreground">{lesson.description}</p>
         </CardContent>
       </Card>
 
       {/* Question */}
-      <Card className="border border-white/10 bg-white/5">
+      <Card>
         <CardHeader>
-          <CardTitle className="text-white text-lg">
+          <CardTitle className="text-lg text-foreground">
             {currentQuestion.question}
           </CardTitle>
         </CardHeader>
@@ -385,20 +387,20 @@ export function LessonContent({ lessonId }: LessonContentProps) {
           {showResult && (
             <div
               className={cn(
-                "p-4 rounded-lg border",
+                'p-4 rounded-lg border',
                 (
-                  currentQuestion.type === "drag-drop"
+                  currentQuestion.type === 'drag-drop'
                     ? JSON.stringify(dragItems) ===
                       JSON.stringify(currentQuestion.correctAnswer)
                     : selectedAnswer === currentQuestion.correctAnswer
                 )
-                  ? "bg-green-50 border-green-200"
-                  : "bg-red-50 border-red-200"
+                  ? 'bg-green-50 border-green-200'
+                  : 'bg-red-50 border-red-200'
               )}
             >
               <div className="flex items-center gap-2 mb-2">
                 {(
-                  currentQuestion.type === "drag-drop"
+                  currentQuestion.type === 'drag-drop'
                     ? JSON.stringify(dragItems) ===
                       JSON.stringify(currentQuestion.correctAnswer)
                     : selectedAnswer === currentQuestion.correctAnswer
@@ -407,18 +409,20 @@ export function LessonContent({ lessonId }: LessonContentProps) {
                 ) : (
                   <X className="h-5 w-5 text-red-600" />
                 )}
-                <span className="font-medium border border-white/10 bg-white/5">
+                <span className="font-medium">
                   {(
-                    currentQuestion.type === "drag-drop"
+                    currentQuestion.type === 'drag-drop'
                       ? JSON.stringify(dragItems) ===
                         JSON.stringify(currentQuestion.correctAnswer)
                       : selectedAnswer === currentQuestion.correctAnswer
                   )
-                    ? "Correct!"
-                    : "Incorrect"}
+                    ? 'Correct!'
+                    : 'Incorrect'}
                 </span>
               </div>
-              <p className="text-sm">{currentQuestion.explanation}</p>
+              <p className="text-sm text-foreground">
+                {currentQuestion.explanation}
+              </p>
             </div>
           )}
 
@@ -427,17 +431,7 @@ export function LessonContent({ lessonId }: LessonContentProps) {
               Previous
             </Button>
             {!showResult ? (
-              <button
-                className="border border-white/10 bg-white/5 p-1 px-4 rounded-md text-white"
-                onClick={handleSubmit}
-                disabled={
-                  !selectedAnswer &&
-                  (currentQuestion.type !== "drag-drop" ||
-                    dragItems.length === 0)
-                }
-              >
-                Submit Answer
-              </button>
+              <Button onClick={handleSubmit}>Submit Answer</Button>
             ) : (
               <Button onClick={handleNext}>
                 {currentStep < lesson.questions.length - 1 ? (

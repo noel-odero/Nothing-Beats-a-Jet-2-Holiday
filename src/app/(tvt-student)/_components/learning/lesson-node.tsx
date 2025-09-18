@@ -13,6 +13,7 @@ interface LessonNodeProps {
 }
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export function LessonNode({
   status,
@@ -40,7 +41,7 @@ export function LessonNode({
       return "bg-primary text-white";
     }
     if (isJumpNode) {
-      return "bg-accent text-accent-foreground";
+      return "bg-accent text-black";
     }
     switch (status) {
       case "completed":
@@ -66,7 +67,7 @@ export function LessonNode({
   return (
     <div className={`mb-6 ${getPositionStyles()}`}>
       <div className="text-center">
-        {isStart && <div className="text-white font-bold mb-2">START</div>}
+        {isStart && <div className="text-black font-bold mb-2">START</div>}
         <div
           onClick={handleClick}
           className={`w-[72px] h-[72px] ${getNodeStyles()} rounded-full flex items-center justify-center ${
@@ -82,9 +83,7 @@ export function LessonNode({
         {title && (
           <div
             className={`mt-2 text-sm ${
-              status === "locked"
-                ? "text-muted-foreground"
-                : "text-white/80 font-medium"
+              status === "locked" ? "text-black" : "text-black/80 font-medium"
             }`}
           >
             {title}
@@ -93,11 +92,14 @@ export function LessonNode({
         {isJumpNode && (
           <>
             <Button variant="secondary" className="mt-4 mb-2">
-              JUMP HERE?
+              Get Certificate
             </Button>
-            <div className="w-[72px] h-[72px] mx-auto bg-accent rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-90 transition-colors shadow-lg">
-              <Play className="w-8 h-8 text-accent-foreground ml-1" />
-            </div>
+            <Link
+              href={"/student/certificates/cert-001"}
+              className="w-[72px] h-[72px] mx-auto bg-accent rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-90 transition-colors shadow-lg"
+            >
+              <Play className="w-8 h-8 text-black ml-1" />
+            </Link>
           </>
         )}
       </div>

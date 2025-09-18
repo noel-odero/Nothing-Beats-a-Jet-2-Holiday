@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import type React from "react";
+import type React from 'react';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../_components/ui/avatar";
+} from '../../_components/ui/avatar';
 import {
   BookOpen,
   Briefcase,
@@ -18,21 +18,21 @@ import {
   X,
   LogOut,
   Settings,
-} from "lucide-react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
+} from 'lucide-react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { cn } from '@/lib/utils';
 
 const navigation = [
-  { name: "Dashboard", href: "/student/dashboard", icon: Home },
-  { name: "Learning", href: "/student/dashboard/learning", icon: BookOpen },
+  { name: 'Dashboard', href: '/student/dashboard', icon: Home },
+  { name: 'Learning', href: '/student/dashboard/learning', icon: BookOpen },
   {
-    name: "Job Opportunities",
-    href: "/student/dashboard/jobs",
+    name: 'Job Opportunities',
+    href: '/student/dashboard/jobs',
     icon: Briefcase,
   },
-  { name: "Success Stories", href: "/student/dashboard/stories", icon: Trophy },
-  { name: "Profile", href: "/student/dashboard/profile", icon: User },
+  { name: 'Success Stories', href: '/student/dashboard/stories', icon: Trophy },
+  { name: 'Profile', href: '/student/dashboard/profile', icon: User },
 ];
 
 interface DashboardLayoutProps {
@@ -44,11 +44,11 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   const pathname = usePathname();
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)]">
+    <div className="min-h-screen bg-background">
       {/* Mobile sidebar overlay */}
       {sidebarOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
+          className="fixed inset-0 z-40 bg-black/20 lg:hidden"
           onClick={() => setSidebarOpen(false)}
         />
       )}
@@ -56,14 +56,14 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
       {/* Sidebar - hidden on mobile */}
       <div
         className={cn(
-          "fixed inset-y-0 bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] left-0 z-50 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 hidden lg:block",
-          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+          'fixed inset-y-0 left-0 z-50 w-64 bg-card border-r border-border transform transition-transform duration-200 ease-in-out lg:translate-x-0 hidden lg:block',
+          sidebarOpen ? 'translate-x-0' : '-translate-x-full'
         )}
       >
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-2.5 border-b border-border">
-            <h2 className="text-xl font-bold text-white">NextWork</h2>
+            <h2 className="text-xl font-bold text-foreground">NextWork</h2>
             <Button
               variant="ghost"
               size="sm"
@@ -75,7 +75,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 p-4 bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] space-y-2">
+          <nav className="flex-1 p-4 space-y-2 bg-card">
             {navigation.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -83,10 +83,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+                    'flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors',
                     isActive
-                      ? " text-white"
-                      : "text-muted-foreground hover:text-muted-foreground hover:bg-accent"
+                      ? 'text-foreground bg-accent/40'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-accent'
                   )}
                 >
                   <item.icon className="h-4 w-4" />
@@ -97,14 +97,14 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
           </nav>
 
           {/* User section */}
-          <div className="p-4 border-t bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] border-border">
+          <div className="p-4 border-t border-border bg-card">
             <div className="flex items-center gap-3 mb-3">
               <Avatar className="h-8 w-8">
                 <AvatarImage src="/student-avatar.png" />
                 <AvatarFallback>JD</AvatarFallback>
               </Avatar>
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-white font-medium truncate">
+                <p className="text-sm text-foreground font-medium truncate">
                   John Doe
                 </p>
                 <p className="text-xs text-muted-foreground truncate">
@@ -112,7 +112,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 </p>
               </div>
             </div>
-            <div className="flex text-white gap-2">
+            <div className="flex gap-2">
               <Button variant="ghost" size="sm" className="flex-1">
                 <Settings className="h-4 w-4 mr-2" />
                 Settings
@@ -127,15 +127,8 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
 
       {/* Main content */}
       <div className="lg:pl-64 pb-16 lg:pb-0">
-        {/* Top bar - simplified for mobile */}
-        {/* <div className="sticky top-0 z-30 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border lg:hidden">
-          <div className="flex items-center justify-center px-4 py-3">
-            <h2 className="text-lg font-bold text-primary">NextWork</h2>
-          </div>
-        </div> */}
-
         {/* Desktop top bar */}
-        <div className="sticky top-0 z-30  bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] border-b border-border hidden lg:block">
+        <div className="sticky top-0 z-30 bg-background border-b border-border hidden lg:block">
           <div className="flex items-center gap-4 px-4 py-3">
             <div className="flex-1" />
             <div className="flex items-center gap-2">
@@ -151,7 +144,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         <main className="p-4 lg:p-6">{children}</main>
       </div>
 
-      <div className="fixed bottom-0 bg-[radial-gradient(1200px_600px_at_50%_-100px,#0b1220_40%,#05070b_100%)] left-0 right-0 z-40 bg-card border-t border-border lg:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 bg-card border-t border-border lg:hidden">
         <nav className="flex items-center justify-around px-2 py-2">
           {navigation.map((item) => {
             const isActive = pathname === item.href;
@@ -160,15 +153,15 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 flex-1",
-                  isActive ? "text-white" : "text-muted-foreground"
+                  'flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-xs font-medium transition-colors min-w-0 flex-1',
+                  isActive ? 'text-foreground' : 'text-muted-foreground'
                 )}
               >
                 <item.icon
-                  className={cn("h-5 w-5", isActive && "text-primary")}
+                  className={cn('h-5 w-5', isActive && 'text-primary')}
                 />
                 <span className="truncate">
-                  {item.name === "Job Opportunities" ? "Jobs" : item.name}
+                  {item.name === 'Job Opportunities' ? 'Jobs' : item.name}
                 </span>
               </Link>
             );

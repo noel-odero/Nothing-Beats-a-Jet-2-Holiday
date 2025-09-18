@@ -6,20 +6,20 @@ import {
 } from "@/app/(tvt-student)/_components/ui/card";
 import { Progress } from "@/app/(tvt-student)/_components/ui/progress";
 import { Badge } from "@/app/(tvt-student)/_components/ui/badge";
-import { Flame, Zap, Target, Trophy } from "lucide-react";
+import { Flame, Target, Trophy } from "lucide-react";
 
 export function LearningStats() {
   return (
     <div className="grid grid-cols-1  gap-4">
-      <Card className="border border-white/10 bg-white/5 ">
+      <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-white text-sm font-medium">
+          <CardTitle className="text-black text-sm font-medium">
             Current Streak
           </CardTitle>
           <Flame className="h-4 w-4 text-orange-500" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-white/80 font-bold">7 days</div>
+          <div className="text-2xl text-black/80 font-bold">7 days</div>
           <p className="text-xs text-muted-foreground">Keep it up!</p>
         </CardContent>
       </Card>
@@ -34,15 +34,15 @@ export function LearningStats() {
         </CardContent>
       </Card> */}
 
-      <Card className="border border-white/10 bg-white/5 ">
+      <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-white text-sm font-medium">
+          <CardTitle className="text-black text-sm font-medium">
             Badges Earned
           </CardTitle>
           <Trophy className="h-4 w-4 text-accent" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-white/80 font-bold">12</div>
+          <div className="text-2xl text-black/80 font-bold">12</div>
           <div className="flex gap-1 mt-2">
             <Badge variant="secondary" className="text-xs">
               Safety Pro
@@ -53,15 +53,15 @@ export function LearningStats() {
           </div>
         </CardContent>
       </Card>
-      <Card className="border border-white/10 bg-white/5 ">
+      <Card>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-white text-sm font-medium">
+          <CardTitle className="text-black text-sm font-medium">
             Lessons Completed
           </CardTitle>
           <Target className="h-4 w-4 text-chart-2" />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl text-white/80 font-bold">24/35</div>
+          <div className="text-2xl text-black/80 font-bold">24/35</div>
           <Progress value={68} className="mt-2" />
         </CardContent>
       </Card>
