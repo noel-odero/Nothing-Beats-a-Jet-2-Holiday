@@ -29,7 +29,7 @@ export default function CertificatePage() {
           brand="NextWork"
           logoUrl="/vercel.svg"
           certificateNo={certificate.certificateNo}
-          certificateUrl={certificate.certificateUrl}
+          // certificateUrl={certificate.certificateUrl}
           referenceNo={certificate.referenceNo}
           courseTitle={certificate.courseTitle}
           instructors={certificate.instructors}
